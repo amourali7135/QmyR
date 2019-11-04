@@ -10,10 +10,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_063555) do
+ActiveRecord::Schema.define(version: 2019_11_04_192304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "businesses", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "linked_in"
+    t.string "photo"
+    t.string "work_phone"
+    t.string "work_email"
+    t.string "occupation"
+    t.string "job_title"
+    t.string "company"
+    t.bigint "user_id"
+    t.bigint "wallet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_businesses_on_user_id"
+    t.index ["wallet_id"], name: "index_businesses_on_wallet_id"
+  end
+
+  create_table "personals", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "nick_name"
+    t.string "email"
+    t.integer "phone"
+    t.string "occupation"
+    t.string "photo"
+    t.string "facebook"
+    t.string "instagram"
+    t.string "snapchat"
+    t.string "linked_in"
+    t.string "twitter"
+    t.string "pinterest"
+    t.integer "whatsapp"
+    t.string "skype"
+    t.string "line"
+    t.string "youtube"
+    t.string "website"
+    t.string "tumblr"
+    t.string "soundcloud"
+    t.string "vk"
+    t.string "wechat"
+    t.string "github"
+    t.string "tiktok"
+    t.string "vine"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_personals_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +77,15 @@ ActiveRecord::Schema.define(version: 2019_09_17_063555) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wallets", force: :cascade do |t|
+    t.string "geolocation_swap_info"
+    t.string "date_met"
+    t.string "own_notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "businesses", "users"
+  add_foreign_key "businesses", "wallets"
+  add_foreign_key "personals", "users"
 end

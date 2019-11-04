@@ -1,0 +1,13 @@
+<h2>Warning on top</h2>
+<%= simple_form_for @business do |f|%>
+<%= f.input :first_name %>
+<%= f.input :last_name %>
+<%= f.input :linked_in, placeholder: "Linkedin.com/" %>
+<%= f.input :photo %>
+<%= f.input :work_phone %>
+<%= f.input :work_email %>
+<%= f.input :occupation %>
+<%= f.input :job_title %>
+<%= f.input :company %>
+<%= f.button :submit, 'Submit', class: 'btn btn-primary'%>
+<% end %>
