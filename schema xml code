@@ -203,7 +203,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="448" y="329" name="user">
+<table x="435" y="211" name="user">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -225,6 +225,22 @@
 <row name="last_name" null="1" autoincrement="0">
 <datatype>CHAR</datatype>
 <default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
+</key>
+</table>
+<table x="428" y="479" name="transactions">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="wallet_one_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="wallet" row="id" />
+</row>
+<row name="wallet_two_id" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="wallet" row="id" />
+</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>

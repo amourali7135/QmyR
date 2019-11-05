@@ -1,4 +1,4 @@
-class BusinessController < ApplicationController
+class BusinessesController < ApplicationController
   def index
   end
 
@@ -37,12 +37,12 @@ class BusinessController < ApplicationController
   end
 
   def edit
+    @business = Business.find(params[:id])
   end
 
   private
 
   def business_params
-    params.require(:business).permit( :first_name, :last_name, :linked_in, :photo, :work_phone, :work_email, :occupation, :job_title, :company, :user_id
-    @user = current_user )
+    params.require(:business).permit( :first_name, :last_name, :linked_in, :photo, :work_phone, :work_email, :occupation, :job_title, :company, :user_id)
   end
 end
