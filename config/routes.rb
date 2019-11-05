@@ -20,12 +20,16 @@ Rails.application.routes.draw do
   get 'wallet/update'
   get 'wallet/destroy'
   get 'wallet/edit'
+
   devise_for :users
+
   root to: 'pages#home'
 
   resources :personals
 
   resources :businesses
+
+  resources :wallets
 
   get 'dashboard', to: 'pages#dashboard', as: 'dashboard'
   get "help", to: "pages#help", as: 'help'
