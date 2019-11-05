@@ -1,13 +1,16 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!, only: [:home, :about, :help, :contact]
 
   def home
+    @user = current_user
     if current_user
-      @user = current_user
-      @artist = Artist.find_by(user_id: @user.id) #user_id: refers to artist table one!
+      redirect_to dashboard_path
+    end
   end
 
   def dashboard
+    @user = current_user
+
   end
 
   def qrmade

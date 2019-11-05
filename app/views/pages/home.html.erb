@@ -1,2 +1,10 @@
 Cool banner/whole page welcome.  Navbar needed?
+Log in if not or dashboard redirect if so.
+Banner
 <h3>Welcome!  Please... </h3>
+
+<% if !current_user %>
+<p>Create an account here!<%= link_to "Sign up!", new_user_registration_path, class: 'btn btn-danger' %></p>
+<% else %>
+<p><%#= Welcome back user.username, go to your dashboard: link_to "Dashboard", dashboard_path(current_user), class: 'btn btn-danger'   %></p>
+<% end %>

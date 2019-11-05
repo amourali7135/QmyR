@@ -1,0 +1,11 @@
+
+<%# if !@user.personal %>
+<p>New personal profile <%= link_to 'New Personal', new_personal_path(@user), class: 'btn btn-danger'%> </p>
+<%# else %>
+<p>Edit personal profile <%= link_to 'Edit Personal', edit_personal_path(@user), class: 'btn btn-danger' %> </p>
+<%# end %>
+<%# if !@user.business %>
+<p>New business profile <%= link_to 'New Business', new_business_path(@user), class: 'btn btn-danger' %> </p>
+<%# else %>
+<p>Edit business profile <%= link_to 'Edit Business', edit_business_path(@user), class: 'btn btn-danger' %> </p>
+<%# end %>
