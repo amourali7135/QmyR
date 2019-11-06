@@ -1,7 +1,6 @@
 class CreatePersonals < ActiveRecord::Migration[5.2]
   def change
     create_table :personals, id: :uuid, default: 'gen_random_uuid()' do |t|
-      t.belongs_to :user, type: :uuid
       t.string :first_name
       t.string :last_name
       t.string :nick_name
@@ -27,9 +26,7 @@ class CreatePersonals < ActiveRecord::Migration[5.2]
       t.string :github
       t.string :tiktok
       t.string :vine
-
-
-
+      t.references :user, type: :uuid
       t.timestamps
     end
   end

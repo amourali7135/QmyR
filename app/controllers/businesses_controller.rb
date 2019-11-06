@@ -3,13 +3,13 @@ class BusinessesController < ApplicationController
   end
 
   def new
-    @user = current_user
+    # @user = current_user
     @business = Business.new
   end
 
   def create
     @business = Business.new(business_params)
-    @user = current_user
+    @business.user_id = current_user.id
     if @business.save
       redirect_to dashboard_path
     else
@@ -43,6 +43,6 @@ class BusinessesController < ApplicationController
   private
 
   def business_params
-    params.require(:business).permit( :first_name, :last_name, :linked_in, :photo, :work_phone, :work_email, :occupation, :job_title, :company, :user_id)
+    params.require(:business).permit( :first_name, :last_name, :linked_in, :photo, :work_phone, :work_email, :occupation, :job_title, :company, :user_id, :user)
   end
 end

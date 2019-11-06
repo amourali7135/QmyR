@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 201911104192255) do
   enable_extension "plpgsql"
 
   create_table "businesses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "user_id"
     t.string "first_name"
     t.string "last_name"
     t.string "linked_in"
@@ -27,13 +26,13 @@ ActiveRecord::Schema.define(version: 201911104192255) do
     t.string "occupation"
     t.string "job_title"
     t.string "company"
+    t.uuid "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_businesses_on_user_id"
   end
 
   create_table "personals", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "user_id"
     t.string "first_name"
     t.string "last_name"
     t.string "nick_name"
@@ -59,6 +58,7 @@ ActiveRecord::Schema.define(version: 201911104192255) do
     t.string "github"
     t.string "tiktok"
     t.string "vine"
+    t.uuid "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_personals_on_user_id"
@@ -84,10 +84,10 @@ ActiveRecord::Schema.define(version: 201911104192255) do
   end
 
   create_table "wallets", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "user_id"
     t.string "geolocation_swap_info"
     t.string "date_met"
     t.string "own_notes"
+    t.uuid "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_wallets_on_user_id"

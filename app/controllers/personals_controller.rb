@@ -3,13 +3,14 @@ class PersonalsController < ApplicationController
   end
 
   def new
-    @user = current_user
+    # @user = current_user
     @personal = Personal.new
   end
 
   def create
     @personal = Personal.new(personal_params)
-    @user = current_user
+    @personal.user_id = current_user.id
+    # raise
     if @personal.save
       redirect_to dashboard_path
     else

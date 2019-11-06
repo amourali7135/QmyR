@@ -10,7 +10,8 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-
+    @personal = current_user.personal
+    @business = current_user.business
   end
 
   def qrmade
