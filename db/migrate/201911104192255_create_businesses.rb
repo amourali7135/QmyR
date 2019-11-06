@@ -1,6 +1,7 @@
 class CreateBusinesses < ActiveRecord::Migration[5.2]
   def change
-    create_table :businesses do |t|
+    create_table :businesses, id: :uuid, default: 'gen_random_uuid()' do |t|
+      t.belongs_to :user, type: :uuid
       t.string :first_name
       t.string :last_name
       t.string :linked_in
@@ -10,10 +11,6 @@ class CreateBusinesses < ActiveRecord::Migration[5.2]
       t.string :occupation
       t.string :job_title
       t.string :company
-      t.uuid
-      t.references :user, foreign_key: true
-      t.references :wallet, foreign_key: true
-
       t.timestamps
     end
   end

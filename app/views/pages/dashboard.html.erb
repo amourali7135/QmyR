@@ -9,5 +9,5 @@
 <%# else %>
 <p>Edit business profile <%= link_to 'Edit Business', edit_business_path(@user), class: 'btn btn-danger' %> </p>
 
-<p>See your wallet of contacts <%= link_to 'Wallet', dashboard_path, class: 'btn btn-danger' %> </p>
+<p>See your wallet of contacts <%= link_to 'Wallet', wallet_path(@user), class: 'btn btn-danger' %> </p>
 <%# end %>
