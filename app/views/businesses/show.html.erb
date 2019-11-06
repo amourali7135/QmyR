@@ -1,11 +1,11 @@
 <h2></h2>
 
-<p class="card-text row align-items-center justify-content-center"><%# if @business.first_name %><%= @business.first_name %></p>
-<p class="card-text row align-items-center justify-content-center"><%# if @business.last_name %><%= @business.last_name %></p>
-<p class="card-text row align-items-center justify-content-center"><%# if @business.work_email %><%= @business.work_email %></p>
-<p class="card-text row align-items-center justify-content-center"><%# if @business.work_phone %><%= @business.work_phone %></p>
-<p class="card-text row align-items-center justify-content-center"><%# if @business.occupation %><%= @business.occupation %></p>
-<p class="card-text row align-items-center justify-content-center"><%# if @business.photo %><%= @business.photo %></p>
-<p class="card-text row align-items-center justify-content-center"><%# if @business.linked_in %><%= @business.linked_in %></p>
-<p class="card-text row align-items-center justify-content-center"><%# if @business.company %><%= @business.company %></p>
-<p class="card-text row align-items-center justify-content-center"><%# if @business.job_title %><%= @business.job_title %></p>
+<p class="card-text row align-items-center justify-content-center"><% if @business.first_name %>First name: <%= @business.first_name %></p><% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @business.last_name %>Last name: <%= @business.last_name %></p><% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @business.work_email %>Work email: <%= @business.work_email %></p><% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @business.work_phone %>Work phone: <%= @business.work_phone %></p><% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @business.occupation %>Occupation: <%= @business.occupation %></p><% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @business.photo %><%= @business.photo %></p> <% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @business.linked_in %>Linked In: <%= @business.linked_in %></p><% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @business.company %>Company: <%= @business.company %></p><% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @business.job_title %>Job title: <%= @business.job_title %></p><% end %>
