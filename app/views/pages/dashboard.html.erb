@@ -1,9 +1,16 @@
 <div class="row align-items-center justify-content-center">
 <div class="row">
+<h3 class="text-dark py-2">Your dashboard </h3>
+</div>
+</div>
+
+<div class="row align-items-center justify-content-center">
+<div class="row">
 <p>New personal profile <%= link_to 'New Personal', new_personal_path, class: 'btn btn-danger'%> </p>
 </div>
 </div>
 
+<% if @user.personal %>
 <div class="row align-items-center justify-content-center">
 <div class="row">
 <p>Edit personal profile <%= link_to 'Edit Personal', edit_personal_path(current_user.personal), class: 'btn btn-danger' %> </p>
@@ -13,9 +20,11 @@
 <%# else %>
 <div class="row align-items-center justify-content-center">
 <div class="row">
-<p>See your personal profile <%= link_to 'Show Personal', personal_path(current_user.personal), class: 'btn btn-danger' %> </p>
+<p>See your personal profile <%= link_to 'See Personal', personal_path(current_user.personal), class: 'btn btn-danger' %> </p>
 </div>
 </div>
+
+<% end %>
 
 <div class="row align-items-center justify-content-center">
 <div class="row">
@@ -23,17 +32,20 @@
 </div>
 </div>
 
+<% if @user.business %>
 <div class="row align-items-center justify-content-center">
 <div class="row">
-<p>Edit business profile <%= link_to 'Edit Business', edit_business_path(current_user.business), class: 'btn btn-danger' %> </p>
+<p>Edit business profile <%= link_to 'Change Business', edit_business_path(current_user.business), class: 'btn btn-danger' %> </p>
 </div>
 </div>
 
 <div class="row align-items-center justify-content-center">
 <div class="row">
-<p>See your business profile <%= link_to 'Show Business', business_path(current_user.business), class: 'btn btn-danger' %> </p>
+<p>See your business profile <%= link_to 'See Business', business_path(current_user.business), class: 'btn btn-danger' %> </p>
 </div>
 </div>
+
+<% end %>
 
 <div class="row align-items-center justify-content-center">
 <div class="row">
