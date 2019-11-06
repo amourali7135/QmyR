@@ -11,7 +11,7 @@
 <%# else %>
 <p>Edit business profile <%= link_to 'Edit Business', edit_business_path(current_user.business), class: 'btn btn-danger' %> </p>
 
-<p>See your personal profile <%= link_to 'Show Business', business_path(current_user.personal), class: 'btn btn-danger' %> </p>
+<p>See your personal profile <%= link_to 'Show Business', business_path(current_user.business), class: 'btn btn-danger' %> </p>
 
 <p>See your wallet of contacts <%= link_to 'Wallet', wallet_path(current_user.id), class: 'btn btn-danger' %> </p>
 <%# end %>
