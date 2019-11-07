@@ -1,32 +1,4 @@
 Rails.application.routes.draw do
-  get 'transactions/index'
-  get 'transactions/new'
-  get 'transactions/create'
-  get 'transactions/show'
-  get 'transactions/update'
-  get 'transactions/destroy'
-  get 'transactions/edit'
-  # get 'business/index'
-  # get 'business/new'
-  # get 'business/create'
-  # get 'business/show'
-  # get 'business/update'
-  # get 'business/destroy'
-  # get 'business/edit'
-  # get 'personal/index'
-  # get 'personal/new'
-  # get 'personal/create'
-  # get 'personal/show'
-  # get 'personal/update'
-  # get 'personal/destroy'
-  # get 'personal/edit'
-  # get 'wallet/index'
-  # get 'wallet/new'
-  # get 'wallet/create'
-  # get 'wallet/show'
-  # get 'wallet/update'
-  # get 'wallet/destroy'
-  # get 'wallet/edit'
 
   devise_for :users
 
@@ -37,6 +9,8 @@ Rails.application.routes.draw do
   resources :businesses
 
   resources :wallets
+
+  resources :transactions
 
   get 'dashboard', to: 'pages#dashboard', as: 'dashboard'
   get "help", to: "pages#help", as: 'help'

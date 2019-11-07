@@ -1,0 +1,9 @@
+<div class="business-wallet-card">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2><%= business.first_name %><%= business.last_name %></h2>
+    <p><%= business.occupation %> <strong><%= business.company %></strong><%= business.job_title %></p>
+    <p><%= link_to 'See this business contact', business_path(business.id)  %></p>
+    <p>You met each other on </p>
+  </div>
+</div>

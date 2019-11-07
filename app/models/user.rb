@@ -8,12 +8,13 @@ class User < ApplicationRecord
   has_one :business
   has_one :wallet
 
-  # after_save :autocreatewallet
+  after_create :autocreatewallet
 
-  # private
+  private
 
-  # def autocreatewallet
-  #   self.wallet.create!
-  # end
+  def autocreatewallet
+    # self.wallet.create!
+    Wallet.create(user: self)
+  end
 
 end

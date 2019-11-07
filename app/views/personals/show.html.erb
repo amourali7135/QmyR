@@ -19,10 +19,15 @@ Shit invisible if not present
 <p class="card-text row align-items-center justify-content-center"><% if @personal.line %>Line: <%= @personal.line %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.youtube %>Youtube: <%= @personal.youtube %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.tumblr %>Tumblr: <%= @personal.tumblr %></p><% end %>
-<p class="card-text row align-items-center justify-content-center"><% if @personal.soundcloud %>Soundcloud:<%= @personal.soundcloud %></p><% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @personal.soundcloud %>Soundcloud: <%= @personal.soundcloud %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.vk %>VK: <%= @personal.vk %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.wechat %>Wechat: <%= @personal.wechat %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.github %>Github: <%= @personal.github %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.tiktok %>Tiktok: <%= @personal.tiktok %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.vine %>Vine: <%= @personal.vine %></p><% end %>
 
+  <% if current_user %>
+  <div class="row align-items-center justify-content-center py-3">
+  <%= link_to 'Add to wallet', transactions_path(@personal), method: :post, class: 'btn btn-danger' %>
+  </div>
+  <% end %>
