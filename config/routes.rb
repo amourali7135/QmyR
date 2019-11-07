@@ -16,8 +16,9 @@ Rails.application.routes.draw do
   get "help", to: "pages#help", as: 'help'
   get 'contact', to: 'pages#contact', as: 'contact'
   get 'about', to: 'pages#about', as: 'about'
-  get 'qrmade', to: 'pages#qrmade', as: 'qrmade'
   get 'postregistration', to: 'pages#postregistration', as: 'postregistration'
+  get 'personalqr', to: 'pages#personalqr', as: 'personalqr'
+  get 'businessqr', to: 'pages#businessqr', as: 'businessqr'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

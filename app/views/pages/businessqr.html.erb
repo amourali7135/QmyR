@@ -1,0 +1,10 @@
+
+
+<%# qr = RQRCode::QRCode.new( 'my string to generate', :size => 4, :level => :h )
+puts qr.to_s %>
+
+<%# @qr = RQRCode::QRCode.new("http://localhost:3000/", size: 7, level: :h) %>
+
+<div class="row align-items-center justify-content-center py-3">
+<%= render_qr_code("http://localhost:3000/businesses/#{current_user.business.id}/") %>
+</div>

@@ -14,7 +14,12 @@ class PagesController < ApplicationController
     @business = current_user.business
   end
 
-  def qrmade
+  def personalqr
+    # @personal = Personal.find(params[:id])
+  end
+
+  def businessqr
+    # @business = Business.find(params[:id])
   end
 
   def registered

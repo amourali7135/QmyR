@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :personal
-  has_one :business
-  has_one :wallet
+  has_one :personal, dependent: :destroy
+  has_one :business, dependent: :destroy
+  has_one :wallet, dependent: :destroy
 
   after_create :autocreatewallet
 

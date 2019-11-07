@@ -18,23 +18,28 @@ TDL:  QR, share,
 <p>Edit personal profile <%= link_to 'Edit Personal', edit_personal_path(current_user.personal), class: 'btn btn-danger' %> </p>
 </div>
 </div>
-<%# if !@user.personal %>
-<%# else %>
+
 <div class="row align-items-center justify-content-center">
 <div class="row">
 <p>See your personal profile <%= link_to 'See Personal', personal_path(current_user.personal), class: 'btn btn-danger' %> </p>
 </div>
 </div>
 
+<div class="row align-items-center justify-content-center">
+<div class="row">
+<p>Share your personal profile <%= link_to 'Share Personal', personalqr_path(current_user.personal), class: 'btn btn-danger' %> </p>
+</div>
+</div>
+
 <% end %>
 
-<%# if !@user.business %>
+
 <div class="row align-items-center justify-content-center">
 <div class="row">
 <p>New business profile <%= link_to 'New Business', new_business_path, class: 'btn btn-danger' %> </p>
 </div>
 </div>
-<%# end %>
+
 
 <% if @user.business %>
 <div class="row align-items-center justify-content-center">
@@ -49,6 +54,12 @@ TDL:  QR, share,
 </div>
 </div>
 
+
+<div class="row align-items-center justify-content-center">
+<div class="row">
+<p>Share your business profile <%= link_to 'Share Business', businessqr_path(current_user.personal), class: 'btn btn-danger' %> </p>
+</div>
+</div>
 <% end %>
 
 <div class="row align-items-center justify-content-center">
@@ -56,10 +67,5 @@ TDL:  QR, share,
 <p>See your wallet of contacts <%= link_to 'Wallet', wallet_path(current_user.id), class: 'btn btn-danger' %> </p>
 </div>
 </div>
-<%# end %>
-<%# if !@user.business %>
-<%# else %>
 
-
-<%# end %>
 
