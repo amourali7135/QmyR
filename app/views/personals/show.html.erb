@@ -31,6 +31,6 @@ Register button prompt if not registered
   <div class="row align-items-center justify-content-center py-3">
   <%= link_to 'Add to wallet', transactions_path(@personal), method: :post, class: 'btn btn-danger' %>
   <% else %>
-  <%= link_to 'Make an account', new_user_registration_path, method: :post, class: 'btn btn-danger' %>
+  <%= link_to 'Make an account!', new_user_registration_path, method: :post, class: 'btn btn-danger' %>
   </div>
   <% end %>

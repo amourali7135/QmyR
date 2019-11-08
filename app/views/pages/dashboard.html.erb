@@ -1,10 +1,28 @@
-TDL:  QR, share,
-
 <div class="row align-items-center justify-content-center">
 <div class="row">
 <h3 class="text-dark py-2">Your dashboard </h3>
 </div>
 </div>
+
+<div class="row align-items-center justify-content-center py-2">
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Personal Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Business Profile</a>
+  </li>
+<li class="nav-item">
+    <a class="nav-link" id="wallet-tab" data-toggle="tab" href="#wallet" role="tab" aria-controls="wallet" aria-selected="false">Your Wallet</a>
+  </li>
+</ul>
+</div>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class=" row align-items-center justify-content-center">
+        <div class="col-sm-6">
+
 
 <div class="row align-items-center justify-content-center">
 <div class="row">
@@ -33,6 +51,13 @@ TDL:  QR, share,
 
 <% end %>
 
+        </div>
+      </div>
+  </div>
+
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-sm-6">
 
 <div class="row align-items-center justify-content-center">
 <div class="row">
@@ -69,3 +94,8 @@ TDL:  QR, share,
 </div>
 
 
+
+        </div>
+      </div>
+  </div>
+</div>

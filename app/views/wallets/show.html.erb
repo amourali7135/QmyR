@@ -14,20 +14,20 @@ Tab with business + personal connections.
 
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    <%# @artists.each do |artist| %>
+    <%# @businesses.each do |business| %>
       <div class=" row align-items-center justify-content-center">
         <div class="col-sm-6">
-          <%#= render partial: 'shared/business_wallet_card', locals: {artist: artist} %>
+          <%#= render partial: 'shared/business_wallet_card', locals: {business: business} %>
         </div>
       </div>
     <%# end %>
   </div>
 
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <%# @arts.each do |art| %>
+    <%# @personals.each do |personal| %>
       <div class="row align-items-center justify-content-center">
         <div class="col-sm-6">
-          <%#= render partial: 'shared/personal_wallet_card', locals: {art: art, artist: art.artist} %>
+          <%#= render partial: 'shared/personal_wallet_card', locals: {personal: personal} %>
         </div>
       </div>
     <%# end %>

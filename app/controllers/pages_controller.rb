@@ -15,11 +15,11 @@ class PagesController < ApplicationController
   end
 
   def personalqr
-    # @personal = Personal.find(params[:id])
+    @personal = current_user.personal
   end
 
   def businessqr
-    # @business = Business.find(params[:id])
+    @business = current_user.business
   end
 
   def registered
