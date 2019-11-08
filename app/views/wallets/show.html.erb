@@ -1,5 +1,6 @@
-Render wallet card partial for cleanliness, but for testing:
-Tab with business + personal connections.
+<div class="row align-items-center justify-content-center py-3 text-dark">
+<h3>Your Wallet</h3>
+</div>
 
 <div class="row align-items-center justify-content-center py-2">
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -14,23 +15,23 @@ Tab with business + personal connections.
 
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    <%# @businesses.each do |business| %>
+    <% @personals.each do |personal| %>
       <div class=" row align-items-center justify-content-center">
         <div class="col-sm-6">
-          <%#= render partial: 'shared/business_wallet_card', locals: {business: business} %>
+          <%= render partial: 'shared/personal_wallet_card', locals: {personal: personal} %>
         </div>
       </div>
-    <%# end %>
+    <% end %>
   </div>
 
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <%# @personals.each do |personal| %>
+    <% @businesses.each do |business| %>
       <div class="row align-items-center justify-content-center">
         <div class="col-sm-6">
-          <%#= render partial: 'shared/personal_wallet_card', locals: {personal: personal} %>
+          <%= render partial: 'shared/business_wallet_card', locals: {business: business} %>
         </div>
       </div>
-    <%# end %>
+    <% end %>
   </div>
 </div>
 

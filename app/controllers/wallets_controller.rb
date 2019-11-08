@@ -18,8 +18,10 @@ class WalletsController < ApplicationController
 
   def show
     @wallet = current_user.wallet
-    @personals = Personal.where(current_user.transaction)
-    @businesses = Business.where(current_user.transaction)
+    # @personals = Personal.where(current_user.transaction.sender_id)
+    # @businesses = Business.where(current_user.transaction.sender_id)
+    @personals = Personal.all
+    @businesses = Business.all
   end
 
   def update
