@@ -1,5 +1,18 @@
 <h2></h2>
 
+ <% if current_user  %>
+  <div class="row align-items-center justify-content-center py-3">
+<%= link_to 'Add to wallet', transactions_path(@business), method: :post, class: 'btn btn-danger' %>
+  </div>
+<% else %>
+<div class="row align-items-center justify-content-center py-1">
+  <h4>Here is the information for your new friend!  Make a free account so you can save this information for later use!</h4>
+  </div>
+<div class="row align-items-center justify-content-center py-3">
+  <%= link_to 'Make an account!', new_user_registration_path, method: :post, class: 'btn btn-danger' %>
+  </div>
+  <% end %>
+
 <p class="card-text row align-items-center justify-content-center"><% if @business.first_name %>First name: <%= @business.first_name %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @business.last_name %>Last name: <%= @business.last_name %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @business.work_email %>Work email: <%= @business.work_email %></p><% end %>
@@ -11,10 +24,4 @@
 <p class="card-text row align-items-center justify-content-center"><% if @business.job_title %>Job title: <%= @business.job_title %></p><% end %>
 
 
-  <% if current_user  %>
-  <div class="row align-items-center justify-content-center py-3">
-<%= link_to 'Add to wallet', transactions_path(@business), method: :post, class: 'btn btn-danger' %>
-<% else %>
-  <%= link_to 'Make an account!', new_user_registration_path, method: :post, class: 'btn btn-danger' %>
-  </div>
-  <% end %>
+ 
