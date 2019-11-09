@@ -1,6 +1,6 @@
 class Wallet < ApplicationRecord
-  has_many :transactions_sender, class_name: 'Transaction', foreign_key: 'sender_id'
-  has_many :transactions_receiver, class_name: 'Transaction', foreign_key: 'receiver_id'
+  has_many :transactions_sender, class_name: 'Transaction', foreign_key: 'sender_id', dependent: :destroy
+  has_many :transactions_receiver, class_name: 'Transaction', foreign_key: 'receiver_id', dependent: :destroy
   belongs_to :user
   # belongs_to :walletable, polymorphic: true #delete if fail
   def transactions
