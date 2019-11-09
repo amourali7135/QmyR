@@ -7,15 +7,11 @@ class Wallet < ApplicationRecord
     transactions_sender + transactions_receiver
   end
 
-  def businesses_filter
-    senders = transactions.filter { |transaction| transaction.sender.user.business }
-    receivers = transactions.filter { |transaction| transaction.receiver.user.business }
-    # hah = transactions.filter { |transaction| transaction.sender.user.business || transaction.receiver.user.business }
-    [senders, receivers].flatten
+  def business_transactions
+    transactions.filter { |transaction| transaction.kind == 'business'}
   end
 
-  def personals_filter
-    transactions.filter { |transaction| transaction.sender.user.personal ||  transaction.receiver.user.personal }.map { |transaction| transaction.sender.user.personal ||  transaction.receiver.user.personal }
+  def personal_transactions
+    transactions.filter { |transaction| transaction.kind == 'personal'}
   end
-
 end

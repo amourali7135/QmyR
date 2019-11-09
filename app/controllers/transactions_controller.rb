@@ -12,9 +12,12 @@ class TransactionsController < ApplicationController
     @transaction.receiver_id = current_user.wallet.id
     begin
       account = Personal.find(params[:format])
+      @transaction.kind = 'personal'
     rescue
       account = Business.find(params[:format])
+      @transaction.kind = 'business'
     end
+
     @transaction.sender_id = account.user.wallet.id
 
     if @transaction.save
