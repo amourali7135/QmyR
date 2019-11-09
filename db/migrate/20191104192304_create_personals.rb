@@ -7,7 +7,6 @@ class CreatePersonals < ActiveRecord::Migration[5.2]
       t.string :email
       t.integer :phone
       t.string :occupation
-      t.string :photo
       t.string :facebook
       t.string :instagram
       t.string :snapchat

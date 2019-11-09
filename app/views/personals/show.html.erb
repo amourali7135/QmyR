@@ -9,7 +9,7 @@ Register button prompt if not registered
 <p class="card-text row align-items-center justify-content-center"><% if @personal.email %>Email: <%= @personal.email %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.phone %>Phone: <%= @personal.phone %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.occupation %>Occupation: <%= @personal.occupation %></p><% end %>
-<p class="card-text row align-items-center justify-content-center"><% if @personal.photo %>Photo: <%= @personal.photo %></p><% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @personal.photo %>Photo: <%= cl_image_tag @personal.photo, height: 300, width: 400, crop: :fill %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.facebook %>Facebook: Snapchat: <%= @personal.snapchat %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.instagram %>Instagram: <%= @personal.instagram %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.linked_in %>Linked In: <%= @personal.linked_in %></p><% end %>

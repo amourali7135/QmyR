@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 201911104192256) do
+ActiveRecord::Schema.define(version: 201911104192258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 201911104192256) do
     t.string "first_name"
     t.string "last_name"
     t.string "linked_in"
-    t.string "photo"
     t.string "work_phone"
     t.string "work_email"
     t.string "occupation"
@@ -29,6 +28,7 @@ ActiveRecord::Schema.define(version: 201911104192256) do
     t.uuid "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["user_id"], name: "index_businesses_on_user_id"
   end
 
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 201911104192256) do
     t.string "email"
     t.integer "phone"
     t.string "occupation"
-    t.string "photo"
     t.string "facebook"
     t.string "instagram"
     t.string "snapchat"
@@ -61,6 +60,7 @@ ActiveRecord::Schema.define(version: 201911104192256) do
     t.uuid "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["user_id"], name: "index_personals_on_user_id"
   end
 

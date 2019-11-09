@@ -17,6 +17,9 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'rqrcode'
 gem 'social-share-button'
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
+
 
 
 

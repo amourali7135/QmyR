@@ -4,7 +4,6 @@ class CreateBusinesses < ActiveRecord::Migration[5.2]
       t.string :first_name
       t.string :last_name
       t.string :linked_in
-      t.string :photo
       t.string :work_phone
       t.string :work_email
       t.string :occupation
