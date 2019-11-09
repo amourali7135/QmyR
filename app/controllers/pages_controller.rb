@@ -23,6 +23,7 @@ class PagesController < ApplicationController
   end
 
   def registered
+    @user = current_user
   end
 
   def help

@@ -9,6 +9,8 @@ class BusinessesController < ApplicationController
     @business = Business.new
   end
 
+# flash[:notice] = "Error test"   #ADD EVERYWHERE!
+
   def create
     @business = Business.new(business_params)
     @business.user_id = current_user.id
