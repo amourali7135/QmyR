@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 201911104192255) do
   end
 
   create_table "transactions", force: :cascade do |t|
+    t.date "date_met"
     t.uuid "sender_id"
     t.uuid "receiver_id"
     t.datetime "created_at", null: false
@@ -87,7 +88,6 @@ ActiveRecord::Schema.define(version: 201911104192255) do
 
   create_table "wallets", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "geolocation_swap_info"
-    t.string "date_met"
     t.string "own_notes"
     t.uuid "user_id"
     t.datetime "created_at", null: false

@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'rqrcode'
+gem "acts_as_follower"
 
 
 

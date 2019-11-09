@@ -25,7 +25,7 @@ class BusinessesController < ApplicationController
 
   def update
     @business = Business.find(params[:id])
-     if @business.update(business_params)
+    if @business.update(business_params)
       redirect_to dashboard_path
     else
       render 'edit'
@@ -41,6 +41,21 @@ class BusinessesController < ApplicationController
   def edit
     @business = Business.find(params[:id])
   end
+
+  # def follow
+  #   @user = current_user # before_action :authenticate_user, only: [:likes]
+  #   @business = Business.find(params[:id])
+  #   @user.follow(@business)
+  #   redirect_to @business, notice: "Followed this business successfully!"
+  # end
+
+  # def unfollow
+  #   @user = current_user # before_action :authenticate_user, only: [:likes]
+  #   @business = Business.find(params[:id])
+  #   @user.stop_following(@business)
+  #   redirect_to @business, notice: "Unfollowed this business successfully!"
+  # end
+
 
   private
 

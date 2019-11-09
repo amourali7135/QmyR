@@ -4,5 +4,6 @@
     <h2><%= personal.first_name %> <%= personal.last_name %></h2>
     <p>You met each other on <strong><%#= @transaction.created_at %></strong> something else.</p>
     <p><%= link_to 'See this personal contact', personal_path(personal.id)  %></p>
+    <%= link_to 'Delete from wallet', transaction_path(personal.id), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-primary' %>
   </div>
 </div>

@@ -26,7 +26,7 @@ class PersonalsController < ApplicationController
 
   def update
     @personal = Personal.find(params[:id])
-     if @personal.update(personal_params)
+    if @personal.update(personal_params)
       redirect_to dashboard_path
     else
       render 'edit'
@@ -42,6 +42,21 @@ class PersonalsController < ApplicationController
   def edit
     @personal = Personal.find(params[:id])
   end
+
+  # def follow
+  #   @user = current_user # before_action :authenticate_user, only: [:likes]
+  #   @personal = Personal.find(params[:id])
+  #   @user.follow(@personal)
+  #   redirect_to @personal, notice: "Followed this personal successfully!"
+  # end
+
+  # def unfollow
+  #   @user = current_user # before_action :authenticate_user, only: [:likes]
+  #   @personal = Personal.find(params[:id])
+  #   @user.stop_following(@personal)
+  #   redirect_to @personal, notice: "Unfollowed this personal successfully!"
+  # end
+
 
   private
 
