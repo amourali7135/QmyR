@@ -26,7 +26,7 @@ class WalletsController < ApplicationController
     # @businesses = (Transaction.where(receiver_id: current_user.wallet.id) + Transaction.where(sender_id: current_user.wallet.id)).map { |tr| [Wallet.find(tr.sender_id).user, Wallet.find(tr.receiver_id).user] }.flatten.reject { |user| user == current_user }.map { |user| user.business }.compact
     # raise
     # @transaction = Transaction.find(params[:id]) for created_at
-    # current_user.all_following
+
   end
 
   def update

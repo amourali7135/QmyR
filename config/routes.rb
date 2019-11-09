@@ -17,12 +17,8 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact', as: 'contact'
   get 'about', to: 'pages#about', as: 'about'
   get 'postregistration', to: 'pages#postregistration', as: 'postregistration'
-  get 'personalqr', to: 'pages#personalqr', as: 'personalqr'
-  get 'businessqr', to: 'pages#businessqr', as: 'businessqr'
-  # get 'business/:id/follow', to: 'business#follow', as: :business_follow
-  # get 'business/:id/unfollow', to: 'business#unfollow', as: :business_unfollow
-  # get 'personal/:id/follow', to: 'personal#follow', as: :personal_follow
-  # get 'personal/:id/unfollow', to: 'personal#unfollow', as: :personal_unfollow
+  get 'personalqr/:uuid', to: 'pages#personalqr', as: 'personalqr'
+  get 'businessqr/:uuid', to: 'pages#businessqr', as: 'businessqr'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

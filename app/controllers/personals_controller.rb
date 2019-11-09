@@ -43,20 +43,6 @@ class PersonalsController < ApplicationController
     @personal = Personal.find(params[:id])
   end
 
-  # def follow
-  #   @user = current_user # before_action :authenticate_user, only: [:likes]
-  #   @personal = Personal.find(params[:id])
-  #   @user.follow(@personal)
-  #   redirect_to @personal, notice: "Followed this personal successfully!"
-  # end
-
-  # def unfollow
-  #   @user = current_user # before_action :authenticate_user, only: [:likes]
-  #   @personal = Personal.find(params[:id])
-  #   @user.stop_following(@personal)
-  #   redirect_to @personal, notice: "Unfollowed this personal successfully!"
-  # end
-
 
   private
 

@@ -21,9 +21,10 @@ class TransactionsController < ApplicationController
     @transaction.sender_id = account.user.wallet.id
 
     if @transaction.save
+
     redirect_to dashboard_path
     else
-      render 'new'
+      flash[:notice] = "Error test"   #ADD EVERYWHERE!
     end
 
   end
