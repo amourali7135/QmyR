@@ -24,16 +24,23 @@
         <div class="col-sm-6">
 
 
+<% if !@user.personal %>
+<div class="row align-items-center justify-content-center">
+<div class="row">
+<p><strong>Create your personal profile as well!</strong></p>
+</div>
+</div>
 <div class="row align-items-center justify-content-center">
 <div class="row">
 <p>New personal profile <%= link_to 'New Personal', new_personal_path, class: 'btn btn-danger'%> </p>
 </div>
 </div>
+<% end %>
 
 <% if @user.personal %>
 <div class="row align-items-center justify-content-center">
 <div class="row">
-<p>Edit personal profile <%= link_to 'Edit Personal', edit_personal_path(current_user.personal), class: 'btn btn-danger' %> </p>
+<p>Edit your personal profile <%= link_to 'Edit Personal', edit_personal_path(current_user.personal), class: 'btn btn-danger' %> </p>
 </div>
 </div>
 
@@ -59,17 +66,26 @@
       <div class="row align-items-center justify-content-center">
         <div class="col-sm-6">
 
+
+<% if !@user.business %>
+<div class="row align-items-center justify-content-center">
+<div class="row">
+<p><strong>Create your business profile as well!</strong></p>
+</div>
+</div>
 <div class="row align-items-center justify-content-center">
 <div class="row">
 <p>New business profile <%= link_to 'New Business', new_business_path, class: 'btn btn-danger' %> </p>
 </div>
 </div>
-
+</div>
+</div>
+<% end %>
 
 <% if @user.business %>
 <div class="row align-items-center justify-content-center">
 <div class="row">
-<p>Edit business profile <%= link_to 'Edit Business', edit_business_path(current_user.business), class: 'btn btn-danger' %> </p>
+<p>Edit your business profile <%= link_to 'Edit Business', edit_business_path(current_user.business), class: 'btn btn-danger' %> </p>
 </div>
 </div>
 
@@ -82,7 +98,7 @@
 
 <div class="row align-items-center justify-content-center">
 <div class="row">
-<p>Share your business profile <%= link_to 'Share Business', businessqr_path(current_user.personal), class: 'btn btn-danger' %> </p>
+<p>Share your business profile <%= link_to 'Share Business', businessqr_path(current_user.business), class: 'btn btn-danger' %> </p>
 </div>
 </div>
 <% end %>

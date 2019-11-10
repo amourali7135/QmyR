@@ -1,4 +1,9 @@
+<div class="row align-items-center justify-content-center">
+
 <h2>Warning on top.  Place all in proper site format</h2>
+</div>
+
+<div class="row align-items-center justify-content-center">
 <%= simple_form_for @personal do |f|%>
 <%= f.input :first_name %>
 <%= f.input :last_name %>
@@ -8,22 +13,23 @@
 <%= f.input :occupation %>
 <%= f.input :photo %>
 <%= f.input :photo_cache, as: :hidden %>
-<%= f.input :facebook, placeholder: "Facebook.com/" %>
-<%= f.input :snapchat  %>
-<%= f.input :instagram %>
-<%= f.input :linked_in, placeholder: "Linkedin.com/" %>
-<%= f.input :twitter %>
-<%= f.input :pinterest %>
-<%= f.input :whatsapp, label: "What's App" %>
-<%= f.input :skype %>
-<%= f.input :line %>
-<%= f.input :youtube %>
-<%= f.input :tumblr %>
-<%= f.input :soundcloud %>
-<%= f.input :vk %>
-<%= f.input :wechat %>
-<%= f.input :github %>
-<%= f.input :tiktok %>
-<%= f.input :vine %>
+<%= f.input :facebook, label: "Facebook Username", placeholder: "Facebook.com/" %>
+<%= f.input :snapchat, label: "Snapchat Username"  %>
+<%= f.input :instagram, label: "Instagram Username" %>
+<%= f.input :linked_in, label: "Linked In Username", placeholder: "Linkedin.com/" %>
+<%= f.input :twitter, label: "Twitter Username" %>
+<%= f.input :pinterest, label: "Pinterestitter Username" %>
+<%= f.input :whatsapp, label: "What's App Number if different than phone number" %>
+<%= f.input :skype, label: "Skype Username" %>
+<%= f.input :line, label: "Line Username" %>
+<%= f.input :youtube, label: "Youtube Username" %>
+<%= f.input :tumblr, label: "Tumblr Username" %>
+<%= f.input :soundcloud, label: "Soundcloud Username" %>
+<%= f.input :vk, label: "VK Username" %>
+<%= f.input :wechat, label: "Wechat Username" %>
+<%= f.input :github, label: "Github Username" %>
+<%= f.input :tiktok, label: "Tiktok Username" %>
+<%= f.input :vine, label: "Vine Username" %>
 <%= f.button :submit, 'Submit', class: 'btn btn-primary'%>
 <% end %>
+</div>

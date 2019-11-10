@@ -1,8 +1,12 @@
+<div class="row align-items-center justify-content-center">
 <h2>Warning on top</h2>
+</div>
+
+<div class="row align-items-center justify-content-center">
 <%= simple_form_for @business do |f|%>
 <%= f.input :first_name %>
 <%= f.input :last_name %>
-<%= f.input :linked_in, placeholder: "Linkedin.com/" %>
+<%= f.input :linked_in, label: "Linked In User Name", placeholder: "Linkedin.com/" %>
 <%= f.input :photo %>
 <%= f.input :photo_cache, as: :hidden %>
 <%= f.input :work_phone %>
@@ -12,3 +16,4 @@
 <%= f.input :company %>
 <%= f.button :submit, 'Submit', class: 'btn btn-primary'%>
 <% end %>
+</div>

@@ -21,12 +21,12 @@ class WalletsController < ApplicationController
     @businesses = @wallet.business_transactions.map { |transaction| transaction.sender.user == current_user ? transaction.receiver.user.business : transaction.sender.user.business }
     @personals = @wallet.personal_transactions.map { |transaction| transaction.sender.user == current_user ? transaction.receiver.user.personal : transaction.sender.user.personal }
 
-    # raise
+    
+    # @transaction = Transaction.find(params[:id]) #for created_at
+
+
     # @personals = (Transaction.where(receiver_id: current_user.wallet.id) + Transaction.where(sender_id: current_user.wallet.id)).map { |tr| [Wallet.find(tr.sender_id).user, Wallet.find(tr.receiver_id).user] }.flatten.reject { |user| user == current_user }.map { |user| user.personal }.compact
     # @businesses = (Transaction.where(receiver_id: current_user.wallet.id) + Transaction.where(sender_id: current_user.wallet.id)).map { |tr| [Wallet.find(tr.sender_id).user, Wallet.find(tr.receiver_id).user] }.flatten.reject { |user| user == current_user }.map { |user| user.business }.compact
-    # raise
-    # @transaction = Transaction.find(params[:id]) for created_at
-
   end
 
   def update

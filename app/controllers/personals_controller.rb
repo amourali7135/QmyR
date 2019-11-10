@@ -14,8 +14,10 @@ class PersonalsController < ApplicationController
     @personal.user_id = current_user.id
     # raise
     if @personal.save
+      flash[:notice] = "Your personal profile was successfully created!" 
       redirect_to dashboard_path
     else
+      flash[:notice] = "There was an error, please try again!" 
       render "new"
     end
   end

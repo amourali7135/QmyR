@@ -21,10 +21,11 @@ class TransactionsController < ApplicationController
     @transaction.sender_id = account.user.wallet.id
 
     if @transaction.save
-
+      flash[:notice] = "Contact saved successfully to your wallet!" 
     redirect_to dashboard_path
+    
     else
-      flash[:notice] = "Error test"   #ADD EVERYWHERE!
+      flash[:notice] = "Contact was not saved successfully to your wallet!"   #ADD EVERYWHERE!
     end
 
   end

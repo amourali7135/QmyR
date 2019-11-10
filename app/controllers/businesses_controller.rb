@@ -9,14 +9,16 @@ class BusinessesController < ApplicationController
     @business = Business.new
   end
 
-# flash[:notice] = "Error test"   #ADD EVERYWHERE!
+
 
   def create
     @business = Business.new(business_params)
     @business.user_id = current_user.id
     if @business.save
+      flash[:notice] = "Your business profile was successfully created!" 
       redirect_to dashboard_path
     else
+      flash[:notice] = "There was an error, please try again!" 
       render "new"
     end
   end
