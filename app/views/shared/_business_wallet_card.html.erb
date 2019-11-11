@@ -3,7 +3,7 @@
   <div class="card-product-infos">
     <h2><%= business.first_name %> <%= business.last_name %></h2>
     <p><%= business.occupation %> <strong> <%= business.company %></strong> <%= business.job_title %></p>
-    <p>You met each other on <%# transaction.transaction_time %></p>
+    <p>You met each other on <%= business.transaction_time %></p>
     <p><%= link_to 'See this business contact', business_path(business.id)  %></p>
     <%= link_to 'Delete from wallet', transaction_path(business.id), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-primary' %>
   </div>
