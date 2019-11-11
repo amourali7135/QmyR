@@ -4,13 +4,13 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :personals
+  resources :personals, except: :index
 
-  resources :businesses
+  resources :businesses, except: :index
 
-  resources :wallets
+  resources :wallets, except: :index
 
-  resources :transactions
+  resources :transactions, only: [:create, :destroy] #DOUBLE CHECK TO BE SURE.
 
   get 'dashboard', to: 'pages#dashboard', as: 'dashboard'
   get "help", to: "pages#help", as: 'help'

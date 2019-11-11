@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 201911104192258) do
+ActiveRecord::Schema.define(version: 201911104192260) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 201911104192258) do
     t.string "last_name"
     t.string "nick_name"
     t.string "email"
-    t.integer "phone"
+    t.string "phone"
     t.string "occupation"
     t.string "facebook"
     t.string "instagram"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 201911104192258) do
     t.string "linked_in"
     t.string "twitter"
     t.string "pinterest"
-    t.integer "whatsapp"
+    t.string "whatsapp"
     t.string "skype"
     t.string "line"
     t.string "youtube"

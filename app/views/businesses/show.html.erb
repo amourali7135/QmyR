@@ -18,8 +18,8 @@
 <p class="card-text row align-items-center justify-content-center"><% if @business.work_email %>Work email: <%= @business.work_email %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @business.work_phone %>Work phone: <%= @business.work_phone %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @business.occupation %>Occupation: <%= @business.occupation %></p><% end %>
-<p class="card-text row align-items-center justify-content-center"><% if @business.photo %><%= cl_image_tag @business.photo, height: 300, width: 400, crop: :fill %></p> <% end %>
-<p class="card-text row align-items-center justify-content-center"><% if @business.linked_in %>Linked In: <%= @business.linked_in %></p><% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @business.photo %><%= cl_image_tag @business.photo, height: 150, width: 200, crop: :fill %></p> <% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @business.linked_in %>Linked In: <%= @business.linked_in %><%= link_to_image('linkedin.png', "http://www.linkedin.com/in/#{@business.linked_in}")%></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @business.company %>Company: <%= @business.company %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @business.job_title %>Job title: <%= @business.job_title %></p><% end %>
 

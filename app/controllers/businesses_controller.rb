@@ -30,8 +30,10 @@ class BusinessesController < ApplicationController
   def update
     @business = Business.find(params[:id])
     if @business.update(business_params)
+      flash[:notice] = "Your business profile was successfully edited!" 
       redirect_to dashboard_path
     else
+      flash[:notice] = "There was an error, please try again!" 
       render 'edit'
     end
   end

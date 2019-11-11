@@ -7,4 +7,8 @@ class Transaction < ApplicationRecord
 
   validates :kind, presence: true, inclusion: { in: ['personal', 'business'] }
   validates :sender, uniqueness: { scope: [:receiver, :kind] } #sender/receiver_id if not work.
+
+  def transaction_time
+    created_at.strftime("%m/%d/%y at %l:%M %p")
+  end
 end

@@ -29,8 +29,10 @@ class PersonalsController < ApplicationController
   def update
     @personal = Personal.find(params[:id])
     if @personal.update(personal_params)
+       flash[:notice] = "Your personal profile was successfully edited!" 
       redirect_to dashboard_path
     else
+      flash[:notice] = "There was an error, please try again!" 
       render 'edit'
     end
   end
