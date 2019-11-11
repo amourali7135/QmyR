@@ -26,7 +26,9 @@ class WalletsController < ApplicationController
     # else
       @businesses = @wallet.business_transactions.map { |transaction| transaction.sender.user == current_user ? transaction.receiver.user.business : transaction.sender.user.business }
       @personals = @wallet.personal_transactions.map { |transaction| transaction.sender.user == current_user ? transaction.receiver.user.personal : transaction.sender.user.personal }
-    # end
+    # the last two lines can be simplified to current_user
+      # @businesses = current_user.business_transactions
+      # @personals = current_user.personal_transactions
     
     # @transaction = Transaction.find(params[:id]) #for created_at
     

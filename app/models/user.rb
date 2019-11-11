@@ -12,7 +12,20 @@ class User < ApplicationRecord
   
   after_create :autocreatewallet
   
-  private
+
+  def transactions
+    receiver_transactions + sender_transactions
+  end
+
+  def business_transactions
+    transactions.filter { |transaction| transaction.kind == 'business'}
+  end
+
+  def personal_transactions
+    transactions.filter { |transaction| transaction.kind == 'personal'}
+  end
+
+    private
   
   def autocreatewallet
     # self.wallet.create!

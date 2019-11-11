@@ -4,7 +4,7 @@
   <div class="row align-items-center justify-content-center py-3">
 <%= link_to 'Add to wallet', transactions_path(@business), method: :post, class: 'btn btn-danger' %>
   </div>
-<% else %>
+<% elsif !current_user%>
 <div class="row align-items-center justify-content-center py-1">
   <h4>Here is the information for your new friend!  Make a free account so you can save this information for later use!</h4>
   </div>
