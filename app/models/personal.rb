@@ -5,7 +5,7 @@ class Personal < ApplicationRecord
   
   include PgSearch::Model
   pg_search_scope :global_search,
-  against: [ :first_name, :last_name, :nick_name ],
+  against: [ :first_name, :last_name ],
   associated_against: {
   business: [ :first_name, :last_name ]
 },

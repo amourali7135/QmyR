@@ -1,13 +1,15 @@
+<div class="container"> 
 Way to get rid of empty spaces?
 Shit invisible if not present
 Top or bottom prompts/buttons?  
 <h2></h2>
 
 <% if current_user && current_user.wallet && @personal.user != current_user && [Transaction.where(sender_id: current_user.wallet.id, receiver_id: @personal.user.wallet.id), Transaction.where(receiver_id: current_user.wallet.id, sender_id: @personal.user.wallet.id)].flatten.empty? %>
+<%# <div class="container-small"> %>
   <div class="row align-items-center justify-content-center py-3">
   <%= link_to 'Add to wallet', transactions_path(@personal), method: :post, class: 'btn btn-danger' %>
   </div>
-  <% else %>
+  <% elsif !current_user %>
   <div class="row align-items-center justify-content-center py-1">
   <h4>Here is the information for your new friend!  Make a free account so you can save this information for later use!</h4>
   </div>
@@ -15,15 +17,20 @@ Top or bottom prompts/buttons?
   <%= link_to 'Make an account!', new_user_registration_path, method: :post, class: 'btn btn-danger' %>
   </div>
   <% end %>
+<%# </div> %>
 
-
-<p class="card-text row align-items-center justify-content-center"><% if @personal.first_name %>First name: <%= @personal.first_name %></p><% end %>
-<p class="card-text row align-items-center justify-content-center"><% if @personal.last_name %>Last name: <%= @personal.last_name %></p><% end %>
+<div class="container-small">
+<p class="card-text row align-items-center justify-content-center pt-2"><% if @personal.photo? %><%= cl_image_tag @personal.photo, height: 135, width: 180, crop: :fill, class: "img-raised rounded-circle img-fluid show-photos" %></p> <% end %>
+<% if %>
+<p class="card-text row align-items-center justify-content-center"><% if @personal.first_name? && @personal.last_name? %><%= @personal.first_name %> <%= @personal.last_name %></p><% end %>
+<% else %>
+<p class="card-text row align-items-center justify-content-center"><% if @personal.first_name? %>First name: <%= @personal.first_name %><%= @personal.last_name %></p><% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @personal.last_name? %>Last name: <%= @personal.last_name %></p><% end %>
+<% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.nick_name %>Nick name: <%= @personal.nick_name %></p><% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @personal.occupation %>Occupation: <%= @personal.occupation %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.email %>Email: <%= @personal.email %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.phone %>Phone: <%= @personal.phone %></p><% end %>
-<p class="card-text row align-items-center justify-content-center"><% if @personal.occupation %>Occupation: <%= @personal.occupation %></p><% end %>
-<p class="card-text row align-items-center justify-content-center"><% if @personal.photo %>Photo: <%= cl_image_tag @personal.photo, height: 300, width: 400, crop: :fill %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.facebook %>Facebook: <%= @personal.facebook %><%= link_to_image('FB.svg', "http://www.facebook.com/#{@personal.facebook}", class: "logos")%></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.snapchat %>Snapchat: <%= @personal.snapchat %><%= link_to_image('snapchat.png', "http://www.snapchat.com/add/#{@personal.snapchat}", class: "logos")%></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.instagram %>Instagram: <%= @personal.instagram %><%= link_to_image('instagram.svg', "http://www.instagram.com/#{@personal.instagram}", class: "logos")%></p><% end %>
@@ -35,11 +42,12 @@ Top or bottom prompts/buttons?
 <p class="card-text row align-items-center justify-content-center"><% if @personal.line %>Line: <%= @personal.line %><%= link_to_image('line.jpeg', "http://www.linkedin.com/in/#{@personal.line}", class: "logos")%></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.youtube %>Youtube: <%= @personal.youtube %><%= link_to_image('youtube.jpeg', "http://www.linkedin.com/in/#{@personal.youtube}", class: "logos")%></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.tumblr %>Tumblr: <%= @personal.tumblr %><%= link_to_image('tumblr.svg', "http://www.#{@personal.tumblr}.tumblr.com", class: "logos")%></p><% end %>
-<p class="card-text row align-items-center justify-content-center"><% if @personal.soundcloud %>Soundcloud: <%= @personal.soundcloud %><%= link_to_image('soundcloud.png', "http://www.linkedin.com/in/#{@personal.soundcloud}", class: "logos")%></p><% end %>
-<p class="card-text row align-items-center justify-content-center"><% if @personal.vk %>VK: <%= @personal.vk %><%= link_to_image('vk.png', "http://www.linkedin.com/in/#{@personal.vk}", class: "logos")%></p><% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @personal.soundcloud %>Soundcloud: <%= @personal.soundcloud %><%= link_to_image('soundcloud.png', "http://www.soundcloud.com/#{@personal.soundcloud}", class: "logos")%></p><% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @personal.vk %>VK: <%= @personal.vk %><%= link_to_image('vk.png', "http://www.vk.com/#{@personal.vk}", class: "logos")%></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @personal.wechat %>Wechat: <%= @personal.wechat %><%= link_to_image('wechat.png', "http://www.linkedin.com/in/#{@personal.wechat}", class: "logos")%></p><% end %>
-<p class="card-text row align-items-center justify-content-center"><% if @personal.github %>Github: <%= @personal.github %><%= link_to_image('github.png', "http://www.linkedin.com/in/#{@personal.github}", class: "logos")%></p><% end %>
-<p class="card-text row align-items-center justify-content-center"><% if @personal.tiktok %>Tiktok: <%= @personal.tiktok %><%= link_to_image('tiktok.svg', "http://www.linkedin.com/in/#{@personal.tiktok}", class: "logos")%></p><% end %>
-<p class="card-text row align-items-center justify-content-center"><% if @personal.vine %>Vine: <%= @personal.vine %><%= link_to_image('vine.jpeg', "http://www.linkedin.com/in/#{@personal.vine}", class: "logos")%></p><% end %>
-
+<p class="card-text row align-items-center justify-content-center"><% if @personal.github %>Github: <%= @personal.github %><%= link_to_image('github.png', "http://www.github.com/#{@personal.github}", class: "logos")%></p><% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @personal.tiktok %>Tiktok: <%= @personal.tiktok %><%= link_to_image('tiktok.svg', "http://www.tiktok.com/@#{@personal.tiktok}", class: "logos")%></p><% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @personal.vine %>Vine: <%= @personal.vine %><%= link_to_image('vine.jpeg', "http://www.vine.co/#{@personal.vine}", class: "logos")%></p><% end %>
+</div>
   
+</div>

@@ -1,25 +1,35 @@
+<div class="container"> 
 <h2></h2>
 
+ <%# <div class="container-small"> %>
  <% if current_user && current_user.wallet && @business.user != current_user && [Transaction.where(sender_id: current_user.wallet.id, receiver_id: @business.user.wallet.id), Transaction.where(receiver_id: current_user.wallet.id, sender_id: @business.user.wallet.id)].flatten.empty? %>
-  <div class="row align-items-center justify-content-center py-3">
+  <div class="row align-items-center justify-content-center ">
 <%= link_to 'Add to wallet', transactions_path(@business), method: :post, class: 'btn btn-danger' %>
   </div>
 <% elsif !current_user%>
 <div class="row align-items-center justify-content-center py-1">
-  <h4>Here is the business information for your new friend!  Make a free account so you can save their information for later use!</h4>
+  <h5>Here is the business information for your new friend!  Make a free account so you can save their information for later use!</h5>
   </div>
 <div class="row align-items-center justify-content-center py-3">
   <%= link_to 'Make an account!', new_user_registration_path, method: :post, class: 'btn btn-danger' %>
   </div>
   <% end %>
+    <%# </div> %>
 
-<p class="card-text row align-items-center justify-content-center"><% if @business.first_name? %>First name: <%= @business.first_name %></p><% end %>
+
+<div class="container-small">
+<p class="card-text row align-items-center justify-content-center pt-2"><% if @business.photo? %><%= cl_image_tag @business.photo, height: 135, width: 180, crop: :fill, class: "img-raised rounded-circle img-fluid show-photos" %></p> <% end %>
+<% if %>
+<p class="card-text row align-items-center justify-content-center"><% if @business.first_name? && @business.last_name? %><%= @business.first_name %> <%= @business.last_name %></p><% end %>
+<% else %>
+<p class="card-text row align-items-center justify-content-center"><% if @business.first_name? %>First name: <%= @business.first_name %><%= @business.last_name %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @business.last_name? %>Last name: <%= @business.last_name %></p><% end %>
+<% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @business.work_email? %>Work email: <%= @business.work_email %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @business.work_phone? %>Work phone: <%= @business.work_phone %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @business.occupation? %>Occupation: <%= @business.occupation %></p><% end %>
-<p class="card-text row align-items-center justify-content-center"><% if @business.photo? %><%= cl_image_tag @business.photo, height: 150, width: 200, crop: :fill %></p> <% end %>
-<p class="card-text row align-items-center justify-content-center"><% if @business.linked_in? %>Linked In: <%= @business.linked_in %> <%= link_to_image('linkedin.png', "http://www.linkedin.com/in/#{@business.linked_in}", class: "logos")%></p><% end %>
+<p class="card-text row align-items-center justify-content-center"><% if @business.linked_in? %>Linked In: <%= @business.linked_in %> <%= link_to_image( 'linkedin.png', "http://www.linkedin.com/in/#{@business.linked_in}", class: "logos")%></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @business.company? %>Company: <%= @business.company %></p><% end %>
 <p class="card-text row align-items-center justify-content-center"><% if @business.job_title? %>Job title: <%= @business.job_title %></p><% end %>
-
+</div>
+</div>

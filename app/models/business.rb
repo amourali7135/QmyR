@@ -7,7 +7,7 @@ class Business < ApplicationRecord
   pg_search_scope :global_search,
   against: [ :first_name, :last_name ],
   associated_against: {
-  personal: [ :first_name, :last_name, :nick_name ]
+  personal: [ :first_name, :last_name]
 },
 using: {
 tsearch: { prefix: true }
