@@ -6,9 +6,9 @@ class Business < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :global_search,
   against: [ :first_name, :last_name ],
-  associated_against: {
-  personal: [ :first_name, :last_name]
-},
+#   associated_against: {
+#   personal: [ :first_name, :last_name]
+# }, lmfao
 using: {
 tsearch: { prefix: true }
 }
