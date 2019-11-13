@@ -6,7 +6,7 @@
  <%= simple_form_for :search, url: wallet_path, method: "GET" do |f| %>
     <%= f.input :search, id:"artist_city2", required: false %>
     <%= link_to "Reset", wallet_path, placeholder: "Search contacts..."  %>
-    <%= f.submit 'Submit', class: 'btn btn-primary'%>
+    <%= f.submit 'Submit', class: 'btn btn-danger'%>
   <% end %>
 
 </div>

@@ -5,6 +5,6 @@
     <p><%= business.occupation %> <strong> <%= business.company %></strong> <%= business.job_title %></p>
     <p>You met each other on <strong> <%= business.transaction_time %></strong></p>
     <p><%= link_to 'See this business contact', business_path(business.id)  %></p>
-    <%= link_to 'Delete from wallet', transaction_path(business.id), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-primary' %>
+    <%= link_to 'Delete from wallet', transaction_path(business.id), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %>
   </div>
 </div>

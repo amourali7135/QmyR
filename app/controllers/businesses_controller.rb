@@ -41,6 +41,7 @@ class BusinessesController < ApplicationController
   def destroy
     @business = Business.find(params[:id])
     @business.destroy
+    flash[:notice] = "Your business profile was successfully deleted!" 
     redirect_to root_path
   end
 

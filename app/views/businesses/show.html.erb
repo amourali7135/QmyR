@@ -3,7 +3,7 @@
 
  <%# <div class="container-small"> %>
  <% if current_user && current_user.wallet && @business.user != current_user && [Transaction.where(sender_id: current_user.wallet.id, receiver_id: @business.user.wallet.id), Transaction.where(receiver_id: current_user.wallet.id, sender_id: @business.user.wallet.id)].flatten.empty? %>
-  <div class="row align-items-center justify-content-center ">
+  <div class="row align-items-center justify-content-center py-3">
 <%= link_to 'Add to wallet', transactions_path(@business), method: :post, class: 'btn btn-danger' %>
   </div>
 <% elsif !current_user%>

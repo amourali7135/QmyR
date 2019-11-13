@@ -19,7 +19,7 @@ class WalletsController < ApplicationController
   def show
     @wallet = current_user.wallet
     # if params["search"]
-      # @filter = params["search"]["first_name"].concat([params['last_name']]).concat([params["search"]["nick_name"]]).flatten.reject(&:blank?)
+      # @filter = params["search"]["first_name"].concat([params['last_name']]).flatten.reject(&:blank?)
       # @businesses = Business.global_search(@filter)
       # @personals = Personal.global_search(@filter)
       
@@ -36,13 +36,17 @@ class WalletsController < ApplicationController
     # @personals = (Transaction.where(receiver_id: current_user.wallet.id) + Transaction.where(sender_id: current_user.wallet.id)).map { |tr| [Wallet.find(tr.sender_id).user, Wallet.find(tr.receiver_id).user] }.flatten.reject { |user| user == current_user }.map { |user| user.personal }.compact
     # @businesses = (Transaction.where(receiver_id: current_user.wallet.id) + Transaction.where(sender_id: current_user.wallet.id)).map { |tr| [Wallet.find(tr.sender_id).user, Wallet.find(tr.receiver_id).user] }.flatten.reject { |user| user == current_user }.map { |user| user.business }.compact
   end
+# end
   
   def update
     
   end
   
   def destroy
-    
+    @transaction = Transaction.find(params[:id])
+    @transaction.destroy
+    flash[:notice] = "Your wallet contact was successfully deleted!" 
+    redirect_to root_path
   end
   
   def edit
