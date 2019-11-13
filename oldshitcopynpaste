@@ -1,0 +1,22 @@
+Rayhan experiment for forced alignment with weird front end error afterwards.  
+<div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-between">
+    <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+      <% if @personal.facebook %>
+        Facebook: <%= @personal.facebook %>
+    </p>
+    <%= link_to_image('FB.svg', "http://www.facebook.com/#{@personal.facebook}", class: "logos") %>
+      <% end %>
+    </div>
+</div>
+
+Rayan alternative solution that was giving me errors at the bottom.  
+<div class="row justify-content-center">
+    <div class="col-4">
+      <%= @personal.facebook %>
+      <%= link_to_image('FB.svg', "http://www.facebook.com/#{@personal.facebook}", class: "logos") %>
+    </div>
+    <div class="col-4">
+      <%= link_to_image('FB.svg', "http://www.facebook.com/#{@personal.facebook}", class: "logos") %>
+    </div>
+  </div>
