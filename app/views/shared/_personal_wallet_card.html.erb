@@ -4,6 +4,6 @@
     <h2><%= personal.first_name %> <%= personal.last_name %></h2>
     <p>You met each other on <strong><%= personal.transaction_time %></strong></p>
     <p><%= link_to 'See this personal contact', personal_path(personal.id)  %></p>
-    <%= link_to 'Delete from wallet', transaction_path(personal.id), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %>
+    <%= link_to 'Delete from wallet', transaction_path(personal.user.transactions.find { |tr| tr.sender_id == personal.user.wallet.id || tr.receiver_id == personal.user.wallet.id }), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %>
   </div>
 </div>
