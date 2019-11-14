@@ -1,8 +1,4 @@
 <div class="container"> 
-Way to get rid of empty spaces?
-Shit invisible if not present
-Top or bottom prompts/buttons?  
-<h2></h2>
 
 <% if current_user && current_user.wallet && @personal.user != current_user && [Transaction.where(sender_id: current_user.wallet.id, receiver_id: @personal.user.wallet.id), Transaction.where(receiver_id: current_user.wallet.id, sender_id: @personal.user.wallet.id)].flatten.empty? %>
 <%# <div class="container-small"> %>
@@ -41,12 +37,29 @@ Top or bottom prompts/buttons?
 <p class="card-text row align-items-center justify-content-center">
 <% if @personal.occupation %>Occupation: <%= @personal.occupation %></p>
 <% end %>
-<p class="card-text row align-items-center justify-content-center">
-<% if @personal.email %>Email: <%= @personal.email %></p>
+
+<div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-between">
+<p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+<% if @personal.email %>Email: <a href="<%= "https://#{@personal.email}" %>"><%= @personal.email %></a>
+</p>
+
+<%= mail_to @personal.email do %>
+  <%= image_tag 'gmail.png', alt: 'email', class: "logos" %>
 <% end %>
-<p class="card-text row align-items-center justify-content-center">
+<% end %>
+</div>
+</div>
+
+<div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-between">
+<p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
 <% if @personal.phone %>Phone: <%= @personal.phone %></p>
+</p>
+<%= link_to_image('phoned.png', "tel:#{@personal.phone}", class: "logos") %>
 <% end %>
+</div>
+</div>
 
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between">
@@ -54,18 +67,18 @@ Top or bottom prompts/buttons?
       <% if @personal.facebook %>
         Facebook: <%= @personal.facebook %>
     </p>
-    <%= link_to_image('FB.svg', "http://www.facebook.com/#{@personal.facebook}", class: "logos") %>
+    <%= link_to_image('FB.svg', "https://www.facebook.com/#{@personal.facebook}", class: "logos") %>
       <% end %>
   </div>
 </div>
 
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between">
-<p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
   <% if @personal.instagram %>
     Instagram: <%= @personal.instagram %>
     </p>
-    <%= link_to_image('instagram.svg', "http://www.instagram.com/#{@personal.instagram}", class: "logos")%>
+    <%= link_to_image('instagram.svg', "https://www.instagram.com/#{@personal.instagram}", class: "logos")%>
     <% end %>
     </div>
 </div>
@@ -76,7 +89,7 @@ Top or bottom prompts/buttons?
   <% if @personal.twitter %>
     Twitter: <%= @personal.twitter %>
     </p>
-    <%= link_to_image('twitter.png', "http://www.twitter.com/#{@personal.twitter}", class: "logos")%>
+    <%= link_to_image('twitter.png', "https://www.twitter.com/#{@personal.twitter}", class: "logos")%>
     <% end %>
     </div>
 </div>
@@ -87,7 +100,7 @@ Top or bottom prompts/buttons?
   <% if @personal.snapchat %>
     Snapchat: <%= @personal.snapchat %>
     </p>
-<%= link_to_image('snapchat.png', "http://www.snapchat.com/add/#{@personal.snapchat}", class: "logos")%>
+<%= link_to_image('snapchat.png', "https://www.snapchat.com/add/#{@personal.snapchat}", class: "logos")%>
     <% end %>
     </div>
 </div>
@@ -98,7 +111,7 @@ Top or bottom prompts/buttons?
 <% if @personal.linked_in %>
 Linked In: <%= @personal.linked_in %>
     </p>
-<%= link_to_image('linkedin.png', "http://www.linkedin.com/in/#{@personal.linked_in}", class: "logos")%></p><% end %>
+<%= link_to_image('linkedin.png', "https://www.linkedin.com/in/#{@personal.linked_in}", class: "logos")%></p><% end %>
 <% end %>
     </div>
 </div>
@@ -109,7 +122,7 @@ Linked In: <%= @personal.linked_in %>
 <% if @personal.pinterest %>
 Pinterest: <%= @personal.pinterest %>
     </p>
-<%= link_to_image('pinterest.png', "http://www.pinterest.com/#{@personal.pinterest}", class: "logos")%>
+<%= link_to_image('pinterest.png', "https://www.pinterest.com/#{@personal.pinterest}", class: "logos")%>
 <% end %>
     </div>
 </div>
@@ -120,8 +133,8 @@ Pinterest: <%= @personal.pinterest %>
 <% if @personal.whatsapp %>
 Whats App: <%= @personal.whatsapp %>
     </p>
+    <%= link_to_image('whatsapp.png', "https://wa.me/#{@personal.whatsapp}", class: "logos")%>
 <% end %>
-
     </div>
 </div>
 
@@ -131,16 +144,21 @@ Whats App: <%= @personal.whatsapp %>
 <% if @personal.skype %>
 Skype: <%= @personal.skype %>
     </p>
+    <%= link_to_image('skype.png', "https://www.skype.com/", class: "logos")%>
 <% end %>
     </div>
 </div>
 
-<%# <p class="card-text row align-items-center justify-content-center"> %>
-<%# if @personal.website %>
- <%#= @personal.website Website:%>
-<%#= </p>link_to_image( cl_image_tag @personal.photo, "http://#{@personal.website}", class: "logos")</p>%>
-<%# end %>
-
+<div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-between">
+<p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+<% if @personal.website %>
+ <%= @personal.website %>
+ </p>
+<%= link_to_image('placeholder.jpeg', "https://#{@personal.website}", class: "logos")%>
+<% end %>
+  </div>
+</div>
 
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between">
@@ -148,7 +166,7 @@ Skype: <%= @personal.skype %>
 <% if @personal.line %>
 Line: <%= @personal.line %>
     </p>
-<%= link_to_image('line.jpeg', "http://www.linkedin.com/in/#{@personal.line}", class: "logos")%>
+<%= link_to_image('line.jpeg', "https://www.linkedin.com/in/#{@personal.line}", class: "logos")%>
 <% end %>
     </div>
 </div>
@@ -159,7 +177,7 @@ Line: <%= @personal.line %>
 <% if @personal.youtube %>
 Youtube Channel URL: <%= @personal.youtube %>
 </p>
-<%= link_to_image('youtube.jpeg', "http://www.youtube.com/channel/#{@personal.youtube}", class: "logos")%>
+<%= link_to_image('youtube.jpeg', "https://www.youtube.com/channel/#{@personal.youtube}", class: "logos")%>
 <% end %>
     </div>
 </div>
@@ -170,7 +188,7 @@ Youtube Channel URL: <%= @personal.youtube %>
 <% if @personal.tumblr %>
 Tumblr: <%= @personal.tumblr %>
 </p>
-<%= link_to_image('tumblr.svg', "http://www.#{@personal.tumblr}.tumblr.com", class: "logos")%>
+<%= link_to_image('tumblr.svg', "https://www.#{@personal.tumblr}.tumblr.com", class: "logos")%>
 <% end %>
     </div>
 </div>
@@ -181,7 +199,7 @@ Tumblr: <%= @personal.tumblr %>
 <% if @personal.soundcloud %>
 Soundcloud: <%= @personal.soundcloud %>
 </p>
-<%= link_to_image('soundcloud.png', "http://www.soundcloud.com/#{@personal.soundcloud}", class: "logos")%>
+<%= link_to_image('soundcloud.png', "https://www.soundcloud.com/#{@personal.soundcloud}", class: "logos")%>
 <% end %>
     </div>
 </div>
@@ -192,7 +210,7 @@ Soundcloud: <%= @personal.soundcloud %>
 <% if @personal.vk %>
 VK: <%= @personal.vk %>
 </p>
-<%= link_to_image('vk.png', "http://www.vk.com/#{@personal.vk}", class: "logos")%>
+<%= link_to_image('vk.png', "https://www.vk.com/#{@personal.vk}", class: "logos")%>
 <% end %>
     </div>
 </div>
@@ -203,7 +221,7 @@ VK: <%= @personal.vk %>
 <% if @personal.wechat %>
 Wechat: <%= @personal.wechat %>
 </p>
-<%= link_to_image('wechat.png', "http://www.linkedin.com/in/#{@personal.wechat}", class: "logos")%>
+<%= link_to_image('wechat.png', "https://www.linkedin.com/in/#{@personal.wechat}", class: "logos")%>
 <% end %>
     </div>
 </div>
@@ -214,7 +232,7 @@ Wechat: <%= @personal.wechat %>
 <% if @personal.github %>
 Github: <%= @personal.github %>
 </p>
-<%= link_to_image('github.png', "http://www.github.com/#{@personal.github}", class: "logos")%>
+<%= link_to_image('github.png', "https://www.github.com/#{@personal.github}", class: "logos")%>
 <% end %>
     </div>
 </div>
@@ -225,7 +243,7 @@ Github: <%= @personal.github %>
 <% if @personal.tiktok %>
 Tiktok: <%= @personal.tiktok %>
 </p>
-<%= link_to_image('tiktok.svg', "http://www.tiktok.com/@#{@personal.tiktok}", class: "logos")%>
+<%= link_to_image('tiktok.svg', "https://www.tiktok.com/@#{@personal.tiktok}", class: "logos")%>
 <% end %>
     </div>
 </div>
@@ -236,10 +254,11 @@ Tiktok: <%= @personal.tiktok %>
 <% if @personal.vine %>
 Vine: <%= @personal.vine %>
 </p>
-<%= link_to_image('vine.jpeg', "http://www.vine.co/#{@personal.vine}", class: "logos")%>
+<%= link_to_image('vine.jpeg', "https://www.vine.co/#{@personal.vine}", class: "logos")%>
 <% end %>
     </div>
 </div>
 
-  
+      </div>
+</div>
   
