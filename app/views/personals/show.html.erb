@@ -17,7 +17,7 @@
 
 <div class="container-small">
 <p class="card-text row align-items-center justify-content-center pt-2">
-<% if @personal.photo? %><%= cl_image_tag @personal.photo, height: 135, width: 180, crop: :fill, class: "img-raised rounded-circle img-fluid show-photos" %></p> 
+<% if @personal.photo? %><%= cl_image_tag @personal.photo, height: 150, width: 180, crop: :fill, class: "img-raised rounded-circle img-fluid show-photos" %></p> 
 <% end %>
 <% if %>
 <p class="card-text row align-items-center justify-content-center">
@@ -39,8 +39,8 @@
 <% end %>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-<p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+<p class="card-text row align-items-center justify-content-center align-items-center">
 <% if @personal.email %>Email: <a href="<%= "https://#{@personal.email}" %>"><%= @personal.email %></a>
 </p>
 
@@ -52,8 +52,8 @@
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-<p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+<p class="card-text row align-items-center justify-content-center align-items-center">
 <% if @personal.phone %>Phone: <%= @personal.phone %></p>
 </p>
 <%= link_to_image('phoned.png', "tel:#{@personal.phone}", class: "logos") %>
@@ -62,8 +62,8 @@
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-    <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+    <p class="card-text row align-items-center justify-content-center align-items-center" >
       <% if @personal.facebook %>
         Facebook: <%= @personal.facebook %>
     </p>
@@ -73,8 +73,8 @@
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-  <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+  <p class="card-text row align-items-center justify-content-center align-items-center" >
   <% if @personal.instagram %>
     Instagram: <%= @personal.instagram %>
     </p>
@@ -84,8 +84,8 @@
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-  <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+  <p class="card-text row align-items-center justify-content-center align-items-center" >
   <% if @personal.twitter %>
     Twitter: <%= @personal.twitter %>
     </p>
@@ -95,8 +95,8 @@
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-  <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+  <p class="card-text row align-items-center justify-content-center align-items-center" >
   <% if @personal.snapchat %>
     Snapchat: <%= @personal.snapchat %>
     </p>
@@ -106,19 +106,19 @@
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-  <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+  <p class="card-text row align-items-center justify-content-center align-items-center" >
 <% if @personal.linked_in %>
 Linked In: <%= @personal.linked_in %>
     </p>
-<%= link_to_image('linkedin.png', "https://www.linkedin.com/in/#{@personal.linked_in}", class: "logos")%></p><% end %>
+<%= link_to_image('linkedin.png', "https://www.linkedin.com/in/#{@personal.linked_in}", class: "logos")%><% end %>
 <% end %>
     </div>
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-  <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+  <p class="card-text row align-items-center justify-content-center align-items-center" >
 <% if @personal.pinterest %>
 Pinterest: <%= @personal.pinterest %>
     </p>
@@ -128,8 +128,8 @@ Pinterest: <%= @personal.pinterest %>
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-  <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+  <p class="card-text row align-items-center justify-content-center align-items-center" >
 <% if @personal.whatsapp %>
 Whats App: <%= @personal.whatsapp %>
     </p>
@@ -139,19 +139,20 @@ Whats App: <%= @personal.whatsapp %>
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-  <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+  <p class="card-text row align-items-center justify-content-center align-items-center" >
 <% if @personal.skype %>
 Skype: <%= @personal.skype %>
     </p>
-    <%= link_to_image('skype.png', "https://www.skype.com/", class: "logos")%>
+    <%= link_to_image('skype.png', "skype:#{@personal.skype}?userinfo", class: "logos")%>
 <% end %>
     </div>
 </div>
 
+
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-<p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+<p class="card-text row align-items-center justify-content-center align-items-center" >
 <% if @personal.website %>
  <%= @personal.website %>
  </p>
@@ -161,8 +162,8 @@ Skype: <%= @personal.skype %>
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-  <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+  <p class="card-text row align-items-center justify-content-center align-items-center" >
 <% if @personal.line %>
 Line: <%= @personal.line %>
     </p>
@@ -172,8 +173,8 @@ Line: <%= @personal.line %>
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-  <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+  <p class="card-text row align-items-center justify-content-center align-items-center" >
 <% if @personal.youtube %>
 Youtube Channel URL: <%= @personal.youtube %>
 </p>
@@ -183,8 +184,8 @@ Youtube Channel URL: <%= @personal.youtube %>
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-  <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+  <p class="card-text row align-items-center justify-content-center align-items-center" >
 <% if @personal.tumblr %>
 Tumblr: <%= @personal.tumblr %>
 </p>
@@ -194,8 +195,8 @@ Tumblr: <%= @personal.tumblr %>
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-  <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+  <p class="card-text row align-items-center justify-content-center align-items-center" >
 <% if @personal.soundcloud %>
 Soundcloud: <%= @personal.soundcloud %>
 </p>
@@ -205,8 +206,8 @@ Soundcloud: <%= @personal.soundcloud %>
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-  <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+  <p class="card-text row align-items-center justify-content-center align-items-center" >
 <% if @personal.vk %>
 VK: <%= @personal.vk %>
 </p>
@@ -216,8 +217,8 @@ VK: <%= @personal.vk %>
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-  <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+  <p class="card-text row align-items-center justify-content-center align-items-center" >
 <% if @personal.wechat %>
 Wechat: <%= @personal.wechat %>
 </p>
@@ -227,8 +228,8 @@ Wechat: <%= @personal.wechat %>
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-  <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+  <p class="card-text row align-items-center justify-content-center align-items-center" >
 <% if @personal.github %>
 Github: <%= @personal.github %>
 </p>
@@ -238,8 +239,8 @@ Github: <%= @personal.github %>
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-  <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+  <p class="card-text row align-items-center justify-content-center align-items-center" >
 <% if @personal.tiktok %>
 Tiktok: <%= @personal.tiktok %>
 </p>
@@ -249,8 +250,8 @@ Tiktok: <%= @personal.tiktok %>
 </div>
 
 <div class="d-flex justify-content-center">
-  <div class="d-flex justify-content-between">
-  <p class="card-text row align-items-center justify-content-center align-items-center" style="width: 200px;">
+  <div class="d-flex justify-content-between" style="width: 80%;">
+  <p class="card-text row align-items-center justify-content-center align-items-center" >
 <% if @personal.vine %>
 Vine: <%= @personal.vine %>
 </p>
