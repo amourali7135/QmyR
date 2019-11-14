@@ -21,27 +21,27 @@
 <% end %>
 <% if %>
 <p class="card-text row align-items-center justify-content-center">
-<% if @personal.first_name? && @personal.last_name? %><%= @personal.first_name %> <%= @personal.last_name %></p>
+<% if @personal.first_name? && @personal.last_name? %><strong><%= @personal.first_name %> <%= @personal.last_name %></strong></p>
 <%# end %>
 <% else %>
 <p class="card-text row align-items-center justify-content-center">
-<% if @personal.first_name? %>First name: <%= @personal.first_name %><%= @personal.last_name %></p>
+<% if @personal.first_name? %><strong>First name: </strong><%= @personal.first_name %><%= @personal.last_name %></p>
 <% end %>
 <p class="card-text row align-items-center justify-content-center">
-<% if @personal.last_name? %>Last name: <%= @personal.last_name %></p>
+<% if @personal.last_name? %><strong>Last name: </strong><%= @personal.last_name %></p>
 <% end %>
 <% end %>
 <p class="card-text row align-items-center justify-content-center">
-<% if @personal.nick_name %>Nick name: <%= @personal.nick_name %></p>
+<% if @personal.nick_name? %><strong>Nick name: &nbsp;</strong> <%= @personal.nick_name %></p>
 <% end %>
 <p class="card-text row align-items-center justify-content-center">
-<% if @personal.occupation %>Occupation: <%= @personal.occupation %></p>
+<% if @personal.occupation? %><strong>Occupation: &nbsp;</strong><%= @personal.occupation %></p>
 <% end %>
 
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
 <p class="card-text row align-items-center justify-content-center align-items-center">
-<% if @personal.email %>Email: <a href="<%= "https://#{@personal.email}" %>"><%= @personal.email %></a>
+<% if @personal.email? %><strong>Email: &nbsp;</strong><a href="<%= "https://#{@personal.email}" %>"><%= @personal.email %></a>
 </p>
 
 <%= mail_to @personal.email do %>
@@ -54,7 +54,7 @@
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
 <p class="card-text row align-items-center justify-content-center align-items-center">
-<% if @personal.phone %>Phone: <%= @personal.phone %></p>
+<% if @personal.phone? %><strong>Phone: &nbsp;</strong><%= @personal.phone %></p>
 </p>
 <%= link_to_image('phoned.png', "tel:#{@personal.phone}", class: "logos") %>
 <% end %>
@@ -64,8 +64,8 @@
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
     <p class="card-text row align-items-center justify-content-center align-items-center" >
-      <% if @personal.facebook %>
-        Facebook: <%= @personal.facebook %>
+      <% if @personal.facebook? %>
+        <strong>Facebook: &nbsp;</strong><%= @personal.facebook %>
     </p>
     <%= link_to_image('FB.svg', "https://www.facebook.com/#{@personal.facebook}", class: "logos") %>
       <% end %>
@@ -75,8 +75,8 @@
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
   <p class="card-text row align-items-center justify-content-center align-items-center" >
-  <% if @personal.instagram %>
-    Instagram: <%= @personal.instagram %>
+  <% if @personal.instagram? %>
+    <strong>Instagram: &nbsp;</strong><%= @personal.instagram %>
     </p>
     <%= link_to_image('instagram.svg', "https://www.instagram.com/#{@personal.instagram}", class: "logos")%>
     <% end %>
@@ -86,8 +86,8 @@
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
   <p class="card-text row align-items-center justify-content-center align-items-center" >
-  <% if @personal.twitter %>
-    Twitter: <%= @personal.twitter %>
+  <% if @personal.twitter? %>
+    <strong>Twitter: &nbsp;</strong><%= @personal.twitter %>
     </p>
     <%= link_to_image('twitter.png', "https://www.twitter.com/#{@personal.twitter}", class: "logos")%>
     <% end %>
@@ -97,8 +97,8 @@
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
   <p class="card-text row align-items-center justify-content-center align-items-center" >
-  <% if @personal.snapchat %>
-    Snapchat: <%= @personal.snapchat %>
+  <% if @personal.snapchat? %>
+    <strong>Snapchat: &nbsp;</strong><%= @personal.snapchat %>
     </p>
 <%= link_to_image('snapchat.png', "https://www.snapchat.com/add/#{@personal.snapchat}", class: "logos")%>
     <% end %>
@@ -108,8 +108,8 @@
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
   <p class="card-text row align-items-center justify-content-center align-items-center" >
-<% if @personal.linked_in %>
-Linked In: <%= @personal.linked_in %>
+<% if @personal.linked_in? %>
+<strong>Linked In: &nbsp;</strong><%= @personal.linked_in %>
     </p>
 <%= link_to_image('linkedin.png', "https://www.linkedin.com/in/#{@personal.linked_in}", class: "logos")%><% end %>
 <% end %>
@@ -119,8 +119,8 @@ Linked In: <%= @personal.linked_in %>
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
   <p class="card-text row align-items-center justify-content-center align-items-center" >
-<% if @personal.pinterest %>
-Pinterest: <%= @personal.pinterest %>
+<% if @personal.pinterest? %>
+<strong>Pinterest: &nbsp;</strong><%= @personal.pinterest %>
     </p>
 <%= link_to_image('pinterest.png', "https://www.pinterest.com/#{@personal.pinterest}", class: "logos")%>
 <% end %>
@@ -130,8 +130,8 @@ Pinterest: <%= @personal.pinterest %>
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
   <p class="card-text row align-items-center justify-content-center align-items-center" >
-<% if @personal.whatsapp %>
-Whats App: <%= @personal.whatsapp %>
+<% if @personal.whatsapp? %>
+<strong>Whats App: &nbsp;</strong><%= @personal.whatsapp %>
     </p>
     <%= link_to_image('whatsapp.png', "https://wa.me/#{@personal.whatsapp}", class: "logos")%>
 <% end %>
@@ -141,8 +141,8 @@ Whats App: <%= @personal.whatsapp %>
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
   <p class="card-text row align-items-center justify-content-center align-items-center" >
-<% if @personal.skype %>
-Skype: <%= @personal.skype %>
+<% if @personal.skype? %>
+<strong>Skype: &nbsp;</strong><%= @personal.skype %>
     </p>
     <%= link_to_image('skype.png', "skype:#{@personal.skype}?userinfo", class: "logos")%>
 <% end %>
@@ -153,8 +153,8 @@ Skype: <%= @personal.skype %>
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
 <p class="card-text row align-items-center justify-content-center align-items-center" >
-<% if @personal.website %>
- <%= @personal.website %>
+<% if @personal.website? %>
+ <strong>Website: &nbsp;</strong><%= @personal.website %>
  </p>
 <%= link_to_image('placeholder.jpeg', "https://#{@personal.website}", class: "logos")%>
 <% end %>
@@ -164,10 +164,10 @@ Skype: <%= @personal.skype %>
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
   <p class="card-text row align-items-center justify-content-center align-items-center" >
-<% if @personal.line %>
-Line: <%= @personal.line %>
+<% if @personal.line? %>
+<strong>Line: &nbsp;</strong><%= @personal.line %>
     </p>
-<%= link_to_image('line.jpeg', "https://www.linkedin.com/in/#{@personal.line}", class: "logos")%>
+<%= link_to_image('line.jpeg', "line://ti/p/#{@personal.line}", class: "logos")%>
 <% end %>
     </div>
 </div>
@@ -175,8 +175,8 @@ Line: <%= @personal.line %>
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
   <p class="card-text row align-items-center justify-content-center align-items-center" >
-<% if @personal.youtube %>
-Youtube Channel URL: <%= @personal.youtube %>
+<% if @personal.youtube? %>
+<strong>Youtube Channel URL: &nbsp;</strong><%= @personal.youtube %>
 </p>
 <%= link_to_image('youtube.jpeg', "https://www.youtube.com/channel/#{@personal.youtube}", class: "logos")%>
 <% end %>
@@ -186,8 +186,8 @@ Youtube Channel URL: <%= @personal.youtube %>
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
   <p class="card-text row align-items-center justify-content-center align-items-center" >
-<% if @personal.tumblr %>
-Tumblr: <%= @personal.tumblr %>
+<% if @personal.tumblr? %>
+<strong>Tumblr: &nbsp;</strong><%= @personal.tumblr %>
 </p>
 <%= link_to_image('tumblr.svg', "https://www.#{@personal.tumblr}.tumblr.com", class: "logos")%>
 <% end %>
@@ -197,8 +197,8 @@ Tumblr: <%= @personal.tumblr %>
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
   <p class="card-text row align-items-center justify-content-center align-items-center" >
-<% if @personal.soundcloud %>
-Soundcloud: <%= @personal.soundcloud %>
+<% if @personal.soundcloud? %>
+<strong>Soundcloud: &nbsp;</strong><%= @personal.soundcloud %>
 </p>
 <%= link_to_image('soundcloud.png', "https://www.soundcloud.com/#{@personal.soundcloud}", class: "logos")%>
 <% end %>
@@ -208,8 +208,8 @@ Soundcloud: <%= @personal.soundcloud %>
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
   <p class="card-text row align-items-center justify-content-center align-items-center" >
-<% if @personal.vk %>
-VK: <%= @personal.vk %>
+<% if @personal.vk? %>
+<strong>VK: &nbsp;</strong><%= @personal.vk %>
 </p>
 <%= link_to_image('vk.png', "https://www.vk.com/#{@personal.vk}", class: "logos")%>
 <% end %>
@@ -219,19 +219,20 @@ VK: <%= @personal.vk %>
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
   <p class="card-text row align-items-center justify-content-center align-items-center" >
-<% if @personal.wechat %>
-Wechat: <%= @personal.wechat %>
+<% if @personal.wechat? %>
+<strong>Wechat: &nbsp;</strong><%= @personal.wechat %>
 </p>
-<%= link_to_image('wechat.png', "https://www.linkedin.com/in/#{@personal.wechat}", class: "logos")%>
+<%= link_to_image('wechat.png', "weixin://dl/chat?#{@personal.wechat}", class: "logos")%>
 <% end %>
     </div>
 </div>
 
+
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
   <p class="card-text row align-items-center justify-content-center align-items-center" >
-<% if @personal.github %>
-Github: <%= @personal.github %>
+<% if @personal.github? %>
+<strong>Github: &nbsp;</strong><%= @personal.github %>
 </p>
 <%= link_to_image('github.png', "https://www.github.com/#{@personal.github}", class: "logos")%>
 <% end %>
@@ -241,8 +242,8 @@ Github: <%= @personal.github %>
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
   <p class="card-text row align-items-center justify-content-center align-items-center" >
-<% if @personal.tiktok %>
-Tiktok: <%= @personal.tiktok %>
+<% if @personal.tiktok? %>
+<strong>Tiktok: &nbsp;</strong><%= @personal.tiktok %>
 </p>
 <%= link_to_image('tiktok.svg', "https://www.tiktok.com/@#{@personal.tiktok}", class: "logos")%>
 <% end %>
@@ -252,8 +253,8 @@ Tiktok: <%= @personal.tiktok %>
 <div class="d-flex justify-content-center">
   <div class="d-flex justify-content-between" style="width: 80%;">
   <p class="card-text row align-items-center justify-content-center align-items-center" >
-<% if @personal.vine %>
-Vine: <%= @personal.vine %>
+<% if @personal.vine? %>
+<strong>Vine: &nbsp;</strong><%= @personal.vine %>
 </p>
 <%= link_to_image('vine.jpeg', "https://www.vine.co/#{@personal.vine}", class: "logos")%>
 <% end %>
