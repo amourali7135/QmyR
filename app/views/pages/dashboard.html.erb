@@ -10,13 +10,13 @@
 <div class="row align-items-center justify-content-center py-2">
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Personal Profile</a>
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Personal</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Business Profile</a>
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Business</a>
   </li>
 <li class="nav-item">
-    <a class="nav-link" id="account-tab" data-toggle="tab" href="#account" role="tab" aria-controls="account" aria-selected="false">Account Options</a>
+    <a class="nav-link" id="account-tab" data-toggle="tab" href="#account" role="tab" aria-controls="account" aria-selected="false">Account</a>
   </li>
 </ul>
 </div>
@@ -33,6 +33,7 @@
 <p><strong>Create your personal profile as well!</strong></p>
 </div>
 </div>
+
 <div class="row align-items-center justify-content-center">
 <div class="row">
 <p>New personal profile <%= link_to 'New Personal', new_personal_path, class: 'btn btn-danger'%> </p>
@@ -43,19 +44,19 @@
 <% if @user.personal %>
 <div class="row align-items-center justify-content-center">
 <div class="row">
-<p>Edit your personal profile <%= link_to 'Edit Personal', edit_personal_path(current_user.personal), class: 'btn btn-danger' %> </p>
-</div>
-</div>
-
-<div class="row align-items-center justify-content-center">
-<div class="row">
 <p>See your personal profile <%= link_to 'See Personal', personal_path(current_user.personal), class: 'btn btn-danger' %> </p>
 </div>
 </div>
 
 <div class="row align-items-center justify-content-center">
 <div class="row">
-<p>Share your personal profile <%= link_to 'Share Personal', personalqr_path(current_user.personal), class: 'btn btn-danger' %> </p>
+<p>Edit your personal profile <%= link_to 'Edit Personal', edit_personal_path(current_user.personal), class: 'btn btn-danger' %> </p>
+</div>
+</div>
+
+<div class="row align-items-center justify-content-center">
+<div class="row">
+<p><strong>Share your personal profile </strong><%= link_to 'Share Personal', personalqr_path(current_user.personal), class: 'btn btn-danger' %> </p>
 </div>
 </div>
 
@@ -82,11 +83,15 @@
 <p>New business profile <%= link_to 'New Business', new_business_path, class: 'btn btn-danger' %> </p>
 </div>
 </div>
-</div>
-</div>
 <% end %>
 
 <% if @user.business %>
+<div class="row align-items-center justify-content-center">
+<div class="row">
+<p>See your business profile <%= link_to 'See Business', business_path(current_user.business), class: 'btn btn-danger' %> </p>
+</div>
+</div>
+
 <div class="row align-items-center justify-content-center">
 <div class="row">
 <p>Edit your business profile <%= link_to 'Edit Business', edit_business_path(current_user.business), class: 'btn btn-danger' %> </p>
@@ -95,14 +100,7 @@
 
 <div class="row align-items-center justify-content-center">
 <div class="row">
-<p>See your business profile <%= link_to 'See Business', business_path(current_user.business), class: 'btn btn-danger' %> </p>
-</div>
-</div>
-
-
-<div class="row align-items-center justify-content-center">
-<div class="row">
-<p>Share your business profile <%= link_to 'Share Business', businessqr_path(current_user.business), class: 'btn btn-danger' %> </p>
+<p><strong>Share your business profile </strong><%= link_to 'Share Business', businessqr_path(current_user.business), class: 'btn btn-danger' %> </p>
 </div>
 </div>
 <% end %>
@@ -112,14 +110,13 @@
     </div>
 
 
-
-
   <div class="tab-pane fade" id="account" role="tabpanel" aria-labelledby="account-tab">
       <div class="row align-items-center justify-content-center">
         <div class="col-sm-6">
+
 <div class="row align-items-center justify-content-center">
 <div class="row">
-<p>See your wallet of contacts <%= link_to 'Wallet', wallet_path(current_user.id), class: 'btn btn-danger' %> </p>
+<p>See your connection wallet <%= link_to 'Wallet', wallet_path(current_user.id), class: 'btn btn-danger' %> </p>
 </div>
 </div>
 
@@ -138,4 +135,6 @@
 
     </div>
   </div>
+</div>
+</div>
 </div>
