@@ -15,10 +15,10 @@ class BusinessesController < ApplicationController
     @business = Business.new(business_params)
     @business.user_id = current_user.id
     if @business.save
-      flash[:notice] = "Your business profile was successfully created!" 
+      flash[:notice] = "Your business profile was successfully created!"
       redirect_to dashboard_path
     else
-      flash[:notice] = "There was an error, please try again!" 
+      flash[:notice] = "There was an error, please try again!"
       render "new"
     end
   end
@@ -30,10 +30,10 @@ class BusinessesController < ApplicationController
   def update
     @business = Business.find(params[:id])
     if @business.update(business_params)
-      flash[:notice] = "Your business profile was successfully edited!" 
+      flash[:notice] = "Your business profile was successfully edited!"
       redirect_to dashboard_path
     else
-      flash[:notice] = "There was an error, please try again!" 
+      flash[:notice] = "There was an error, please try again!"
       render 'edit'
     end
   end
@@ -41,7 +41,7 @@ class BusinessesController < ApplicationController
   def destroy
     @business = Business.find(params[:id])
     @business.destroy
-    flash[:notice] = "Your business profile was successfully deleted!" 
+    flash[:notice] = "Your business profile was successfully deleted!"
     redirect_to root_path
   end
 

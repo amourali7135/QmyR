@@ -1,3 +1,4 @@
+
 <div class="personal-wallet-card">
   <img src=<%= personal.photo %> />
   <div class="card-product-infos">
@@ -7,3 +8,5 @@
     <%= link_to 'Delete from wallet', transaction_path(personal.user.transactions.find { |tr| tr.sender_id == personal.user.wallet.id || tr.receiver_id == personal.user.wallet.id }), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %>
   </div>
 </div>
+
+

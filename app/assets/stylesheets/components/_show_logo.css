@@ -1,0 +1,16 @@
+.logos {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: medium;
+  border-color: white;
+}
+.container-small {
+  margin: auto;
+  width: 90%;
+  border-width: medium;
+  border-color: white;
+  border-style: solid;
+  box-shadow: 0px 0px 7px 0px #949294;
+}

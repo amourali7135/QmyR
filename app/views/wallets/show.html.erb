@@ -1,8 +1,8 @@
-<div class="row align-items-center justify-content-center py-3 text-dark">
+<div class="row align-items-center justify-content-center py-3">
 <h3>Your Wallet</h3>
 </div>
 
-<div class="row align-items-center justify-content-center py-3 text-dark">
+<div class="row align-items-center justify-content-center py-3">
  <%= simple_form_for :search, url: wallet_path, method: "GET" do |f| %>
     <%= f.input :search, id:"artist_city2", required: false %>
     <%= link_to "Reset", wallet_path, placeholder: "Search contacts..."  %>
