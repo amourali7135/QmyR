@@ -1,6 +1,9 @@
 <div class="container pt-3">
 
 <% if current_user && current_user.wallet && @personal.user != current_user && [Transaction.where(sender_id: current_user.wallet.id, receiver_id: @personal.user.wallet.id, kind: "personal"), Transaction.where(receiver_id: current_user.wallet.id, sender_id: @personal.user.wallet.id, kind: "personal")].flatten.empty? %>
+   <div class="row align-items-center justify-content-center py-1">
+  <h5>Here is the personal information for your new friend!  Save it to your wallet!
+  <div class="row align-items-center justify-content-center py-3">
   <div class="row align-items-center justify-content-center py-3">
   <%= link_to 'Add to wallet', transactions_path(@personal), method: :post, class: 'btn btn-danger' %>
   </div>
@@ -9,7 +12,7 @@
   <h4>Here is the information for your new friend!  Make a free account so you can save this information for later use!</h4>
   </div>
   <div class="row align-items-center justify-content-center py-3">
-  <%= link_to 'Make an account!', new_user_registration_path, method: :post, class: 'btn btn-danger' %>
+  <%= link_to 'Make an account!', new_user_registration_path, method: :get, class: 'btn btn-danger' %>
   </div>
 <% end %>
 

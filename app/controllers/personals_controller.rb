@@ -14,10 +14,10 @@ class PersonalsController < ApplicationController
     @personal.user_id = current_user.id
     # raise
     if @personal.save
-      flash[:notice] = "Your personal profile was successfully created!" 
+      flash[:notice] = "Your personal profile was successfully created!  Don't forget to make a business profile as well if you haven't!"
       redirect_to dashboard_path
     else
-      flash[:notice] = "There was an error, please try again!" 
+      flash[:notice] = "There was an error, please try again!"
       render "new"
     end
   end
@@ -29,10 +29,10 @@ class PersonalsController < ApplicationController
   def update
     @personal = Personal.find(params[:id])
     if @personal.update(personal_params)
-       flash[:notice] = "Your personal profile was successfully edited!" 
+       flash[:notice] = "Your personal profile was successfully edited!"
       redirect_to dashboard_path
     else
-      flash[:notice] = "There was an error, please try again!" 
+      flash[:notice] = "There was an error, please try again!"
       render 'edit'
     end
   end

@@ -15,7 +15,7 @@ class BusinessesController < ApplicationController
     @business = Business.new(business_params)
     @business.user_id = current_user.id
     if @business.save
-      flash[:notice] = "Your business profile was successfully created!"
+      flash[:notice] = "Your business profile was successfully created!  Don't forget to make a personal profile as well if you haven't!"
       redirect_to dashboard_path
     else
       flash[:notice] = "There was an error, please try again!"
