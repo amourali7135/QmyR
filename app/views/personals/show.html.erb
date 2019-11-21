@@ -1,7 +1,6 @@
-<div class="container"> 
+<div class="container pt-3">
 
-<% if current_user && current_user.wallet && @personal.user != current_user && [Transaction.where(sender_id: current_user.wallet.id, receiver_id: @personal.user.wallet.id), Transaction.where(receiver_id: current_user.wallet.id, sender_id: @personal.user.wallet.id)].flatten.empty? %>
-<%# <div class="container-small"> %>
+<% if current_user && current_user.wallet && @personal.user != current_user && [Transaction.where(sender_id: current_user.wallet.id, receiver_id: @personal.user.wallet.id, kind: "personal"), Transaction.where(receiver_id: current_user.wallet.id, sender_id: @personal.user.wallet.id, kind: "personal")].flatten.empty? %>
   <div class="row align-items-center justify-content-center py-3">
   <%= link_to 'Add to wallet', transactions_path(@personal), method: :post, class: 'btn btn-danger' %>
   </div>
@@ -13,11 +12,11 @@
   <%= link_to 'Make an account!', new_user_registration_path, method: :post, class: 'btn btn-danger' %>
   </div>
 <% end %>
-<%# </div> %>
+
 
 <div class="container-small">
 <p class="card-text row align-items-center justify-content-center pt-2">
-<% if @personal.photo? %><%= cl_image_tag @personal.photo, height: 150, width: 180, crop: :fill, class: "img-raised rounded-circle img-fluid show-photos" %></p> 
+<% if @personal.photo? %><%= cl_image_tag @personal.photo, height: 150, width: 180, crop: :fill, class: "img-raised rounded-circle img-fluid show-photos" %></p>
 <% end %>
 <% if %>
 <p class="card-text row align-items-center justify-content-center">
@@ -263,4 +262,5 @@
 
       </div>
 </div>
-  
+
+
