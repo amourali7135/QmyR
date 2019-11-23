@@ -21,6 +21,7 @@ gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'pg_search', '~> 2.3.0'
 gem 'serviceworker-rails'
+gem 'sprockets', '~> 3.7.2'
 
 
 
