@@ -11,8 +11,10 @@
 <%= social_share_button_tag(@personal) %>
 </div>
 
+<% if Rails.env.production? %>
 <div class="row align-items-center justify-content-center py-3">
+<%= render_qr_code("http://qmyr.herokuapp.com/personals/#{current_user.business.id}/") %>
+<% else %>
 <%= render_qr_code("http://localhost:3000/personals/#{current_user.personal.id}/") %>
 </div>
-
-
+<% end %>
