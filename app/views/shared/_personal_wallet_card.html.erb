@@ -1,6 +1,6 @@
 
 <div class="personal-wallet-card">
-  <% if personal.photo %>
+  <% if personal.photo? %>
     <img src=<%= personal.photo %> />
   <% else %>
     <%= image_tag("https://usergroups.anaplan.com/static/images/placeholder_avatar.png") %>
