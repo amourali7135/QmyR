@@ -19,8 +19,9 @@
 <div class="container-small">
 
 <p class="card-text row align-items-center justify-content-center pt-2">
-<% if @business.photo? %><%= cl_image_tag @business.photo, height: 135, width: 180, crop: :fill, class: "img-raised rounded-circle img-fluid show-photos" %>
-</p>
+<% if @business.photo? %><%= cl_image_tag @business.photo, height: 135, width: 180, crop: :fill, class: "img-raised rounded-circle img-fluid show-photos" %></p>
+<% else %>
+<%=image_tag "https://usergroups.anaplan.com/static/images/placeholder_avatar.png", height: 135, width: 180, crop: :fill, class: "img-raised rounded-circle img-fluid show-photos" %></p>
 <% end %>
 <% if %>
 

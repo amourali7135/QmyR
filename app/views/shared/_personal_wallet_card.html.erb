@@ -1,6 +1,10 @@
 
 <div class="personal-wallet-card">
-  <img src=<%= personal.photo %> />
+  <% if personal.photo %>
+    <img src=<%= personal.photo %> />
+  <% else %>
+    <%= image_tag("https://usergroups.anaplan.com/static/images/placeholder_avatar.png") %>
+  <% end %>
   <div class="card-product-infos">
     <h2><%= personal.first_name %> <%= personal.last_name %></h2>
     <p>You met each other on <strong><%= personal.transaction_time %></strong></p>

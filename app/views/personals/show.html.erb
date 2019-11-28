@@ -9,7 +9,7 @@
   </div>
   <% elsif !current_user %>
   <div class="row align-items-center justify-content-center py-1">
-  <h4>Here is the information for your new friend!  Make a free account so you can save this information for later use!</h4>
+  <h4>Here is the information for your new friend!  Make a free account so you can save their information for later use!</h4>
   </div>
   <div class="row align-items-center justify-content-center py-3">
   <%= link_to 'Make an account!', new_user_registration_path, method: :get, class: 'btn btn-danger' %>
@@ -20,6 +20,8 @@
 <div class="container-small">
 <p class="card-text row align-items-center justify-content-center pt-2">
 <% if @personal.photo? %><%= cl_image_tag @personal.photo, height: 150, width: 180, crop: :fill, class: "img-raised rounded-circle img-fluid show-photos" %></p>
+<% else %>
+<%=image_tag "https://usergroups.anaplan.com/static/images/placeholder_avatar.png", height: 135, width: 180, crop: :fill, class: "img-raised rounded-circle img-fluid show-photos" %></p>
 <% end %>
 <% if %>
 <p class="card-text row align-items-center justify-content-center">
